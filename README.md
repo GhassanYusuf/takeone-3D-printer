@@ -1,6 +1,4 @@
 # TAKEONE3D
-
-## What is my project here ?
 This project was to convert MakerBot Replicator 2 which had failed with me several times and had lots of issues when trying to print because it didnt have a heated bed at the beginning so i bought a heated bed but the board dosent support it. so i decided swap the board and convert it to marlin firmware 2.0 with auto leveling and heated bed, here you will find every thing, from wiring and steps i took and the boards i used.
 
 ## The Board I Used ?
