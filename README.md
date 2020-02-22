@@ -33,3 +33,6 @@ and for Z threaded screw
 5000      mm/sec For Z
 unknown   mm/sec For E
 ```
+## Adding BL-TOUCH
+
+[Adding BL-TOUCH](https://www.instructables.com/id/Connecting-BLTOUCH-to-KFB20/)
