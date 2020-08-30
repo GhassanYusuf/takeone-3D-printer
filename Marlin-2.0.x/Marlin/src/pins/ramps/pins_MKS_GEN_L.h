@@ -51,6 +51,3 @@
 #endif
 
 #include "pins_RAMPS.h"
-
-//redirect the servo pin to the Z-Max plug
-#define SERVO0_PIN 19
