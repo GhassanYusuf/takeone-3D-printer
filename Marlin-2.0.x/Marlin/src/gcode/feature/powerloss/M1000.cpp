@@ -29,7 +29,11 @@
 #include "../../../module/motion.h"
 #include "../../../lcd/ultralcd.h"
 #if ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD
   #include "../../../lcd/extui/ui_api.h"
+=======
+  #include "../../../lcd/extensible_ui/ui_api.h"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 #define DEBUG_OUT ENABLED(DEBUG_POWER_LOSS_RECOVERY)
@@ -63,7 +67,11 @@ void GcodeSuite::M1000() {
       #if HAS_LCD_MENU
         ui.goto_screen(menu_job_recovery);
       #elif ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD
         ExtUI::onPowerLossResume();
+=======
+        ExtUI::OnPowerLossResume();
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #else
         SERIAL_ECHO_MSG("Resume requires LCD.");
       #endif

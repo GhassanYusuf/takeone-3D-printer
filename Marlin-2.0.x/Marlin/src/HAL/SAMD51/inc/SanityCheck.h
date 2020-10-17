@@ -46,3 +46,14 @@
 #if ENABLED(FAST_PWM_FAN)
   #error "FAST_PWM_FAN is not yet implemented for this platform."
 #endif
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/SAMD51/inc/SanityCheck.h
+=======
+
+#if ENABLED(EEPROM_SETTINGS) && NONE(SPI_EEPROM, I2C_EEPROM)
+  #warning "Did you activate the SmartEEPROM? See https://github.com/GMagician/SAMD51-SmartEEprom-Activator"
+#endif
+
+#if TMC_HAS_SW_SERIAL
+  #error "TMC220x Software Serial is not supported on this platform."
+#endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_SAMD51/inc/SanityCheck.h

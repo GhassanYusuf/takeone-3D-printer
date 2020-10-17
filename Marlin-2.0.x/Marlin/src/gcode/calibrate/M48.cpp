@@ -80,8 +80,13 @@ void GcodeSuite::M48() {
   xy_float_t next_pos = current_position;
 
   const xy_pos_t probe_pos = {
+<<<<<<< HEAD
     parser.linearval('X', next_pos.x + probe.offset_xy.x),  // If no X use the probe's current X position
     parser.linearval('Y', next_pos.y + probe.offset_xy.y)   // If no Y, ditto
+=======
+    parser.linearval('X', next_pos.x + probe_offset_xy.x),
+    parser.linearval('Y', next_pos.y + probe_offset_xy.y)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   };
 
   if (!probe.can_reach(probe_pos)) {
@@ -169,7 +174,11 @@ void GcodeSuite::M48() {
           while (angle < 0.0) angle += 360.0;   // outside of this range.   It looks like they behave correctly with
                                                 // numbers outside of the range, but just to be safe we clamp them.
 
+<<<<<<< HEAD
           const xy_pos_t noz_pos = probe_pos - probe.offset_xy;
+=======
+          const xy_pos_t noz_pos = probe_pos - probe_offset_xy;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           next_pos.set(noz_pos.x + cos(RADIANS(angle)) * radius,
                        noz_pos.y + sin(RADIANS(angle)) * radius);
 

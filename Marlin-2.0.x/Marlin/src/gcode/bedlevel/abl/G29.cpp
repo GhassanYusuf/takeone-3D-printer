@@ -37,7 +37,11 @@
 #include "../../queue.h"
 
 #if ENABLED(PROBE_TEMP_COMPENSATION)
+<<<<<<< HEAD
   #include "../../../feature/probe_temp_comp.h"
+=======
+  #include "../../../feature/probe_temp_compensation.h"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #include "../../../module/temperature.h"
 #endif
 
@@ -913,8 +917,13 @@ G29_TYPE GcodeSuite::G29() {
         planner.force_unapply_leveling(converted); // use conversion machinery
 
         // Use the last measured distance to the bed, if possible
+<<<<<<< HEAD
         if ( NEAR(current_position.x, probePos.x - probe.offset_xy.x)
           && NEAR(current_position.y, probePos.y - probe.offset_xy.y)
+=======
+        if ( NEAR(current_position.x, probePos.x - probe_offset_xy.x)
+          && NEAR(current_position.y, probePos.y - probe_offset_xy.y)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         ) {
           const float simple_z = current_position.z - measured_z;
           if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPAIR("Probed Z", simple_z, "  Matrix Z", converted.z, "  Discrepancy ", simple_z - converted.z);

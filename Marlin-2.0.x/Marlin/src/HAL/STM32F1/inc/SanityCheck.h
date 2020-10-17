@@ -37,7 +37,11 @@
   #error "FAST_PWM_FAN is not yet implemented for this platform."
 #endif
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/STM32F1/inc/SanityCheck.h
 #if !defined(HAVE_SW_SERIAL) && HAS_TMC_SW_SERIAL
+=======
+#if !defined(HAVE_SW_SERIAL) && TMC_HAS_SW_SERIAL
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_STM32F1/inc/SanityCheck.h
   #warning "With TMC2208/9 consider using SoftwareSerialM with HAVE_SW_SERIAL and appropriate SS_TIMER."
   #error "Missing SoftwareSerial implementation."
 #endif

@@ -36,6 +36,10 @@
   #error "FAST_PWM_FAN is not yet implemented for this platform."
 #endif
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/STM32_F4_F7/inc/SanityCheck.h
 #if HAS_TMC_SW_SERIAL
+=======
+#if TMC_HAS_SW_SERIAL
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_STM32_F4_F7/inc/SanityCheck.h
   #error "TMC220x Software Serial is not supported on this platform."
 #endif

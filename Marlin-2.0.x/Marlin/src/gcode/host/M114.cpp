@@ -36,7 +36,11 @@
 
   void report_xyze(const xyze_pos_t &pos, const uint8_t n=XYZE, const uint8_t precision=3) {
     char str[12];
+<<<<<<< HEAD
     LOOP_L_N(a, n) {
+=======
+    for (uint8_t a = 0; a < n; a++) {
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       SERIAL_CHAR(' ', axis_codes[a], ':');
       SERIAL_ECHO(dtostrf(pos[a], 1, precision, str));
     }
@@ -46,8 +50,13 @@
 
   void report_xyz(const xyz_pos_t &pos, const uint8_t precision=3) {
     char str[12];
+<<<<<<< HEAD
     LOOP_XYZ(a) {
       SERIAL_CHAR(' ', XYZ_CHAR(a), ':');
+=======
+    for (uint8_t a = X_AXIS; a <= Z_AXIS; a++) {
+      SERIAL_CHAR(' ', axis_codes[a], ':');
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       SERIAL_ECHO(dtostrf(pos[a], 1, precision, str));
     }
     SERIAL_EOL();

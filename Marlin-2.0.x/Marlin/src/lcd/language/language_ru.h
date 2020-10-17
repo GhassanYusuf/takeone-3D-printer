@@ -50,7 +50,11 @@ namespace Language_ru {
   PROGMEM Language_Str MSG_DISABLE_STEPPERS                = _UxGT("Выключить двигатели");
   PROGMEM Language_Str MSG_DEBUG_MENU                      = _UxGT("Меню отладки");
   PROGMEM Language_Str MSG_PROGRESS_BAR_TEST               = _UxGT("Тест индикатора");
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_AUTO_HOME                       = _UxGT("Парковка XYZ");
+=======
+  PROGMEM Language_Str MSG_AUTO_HOME                       = _UxGT("Автопарковка");
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_AUTO_HOME_X                     = _UxGT("Парковка X");
   PROGMEM Language_Str MSG_AUTO_HOME_Y                     = _UxGT("Парковка Y");
   PROGMEM Language_Str MSG_AUTO_HOME_Z                     = _UxGT("Парковка Z");
@@ -96,7 +100,11 @@ namespace Language_ru {
   PROGMEM Language_Str MSG_LEVEL_CORNERS                   = _UxGT("Выровнять углы");
   PROGMEM Language_Str MSG_NEXT_CORNER                     = _UxGT("Следующий угол");
   PROGMEM Language_Str MSG_EDIT_MESH                       = _UxGT("Редактировать сетку");
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_EDITING_STOPPED                 = _UxGT("Правка сетки окончена");
+=======
+  PROGMEM Language_Str MSG_EDITING_STOPPED                 = _UxGT("Ред. сетки завершено");
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_PROBING_MESH                    = _UxGT("Точка сетки:");
   PROGMEM Language_Str MSG_MESH_X                          = _UxGT("Индекс X");
   PROGMEM Language_Str MSG_MESH_Y                          = _UxGT("Индекс Y");
@@ -234,10 +242,15 @@ namespace Language_ru {
   PROGMEM Language_Str MSG_MAX                             = " " LCD_STR_THERMOMETER _UxGT(" Макс");
   PROGMEM Language_Str MSG_FACTOR                          = " " LCD_STR_THERMOMETER _UxGT(" Фактор");
   PROGMEM Language_Str MSG_AUTOTEMP                        = _UxGT("Автотемпература");
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_LCD_ON                          = _UxGT("Вкл");
   PROGMEM Language_Str MSG_LCD_OFF                         = _UxGT("Выкл");
   PROGMEM Language_Str MSG_PID_AUTOTUNE                    = _UxGT("Автонастройка");
   PROGMEM Language_Str MSG_PID_AUTOTUNE_E                  = _UxGT("Автонастройка *");
+=======
+  PROGMEM Language_Str MSG_LCD_ON                          = _UxGT("Вкл.");
+  PROGMEM Language_Str MSG_LCD_OFF                         = _UxGT("Выкл.");
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_SELECT                          = _UxGT("Выбор");
   PROGMEM Language_Str MSG_SELECT_E                        = _UxGT("Выбор *");
   PROGMEM Language_Str MSG_ACC                             = _UxGT("Ускорение");
@@ -348,9 +361,15 @@ namespace Language_ru {
 
   PROGMEM Language_Str MSG_HOME_FIRST                      = _UxGT("Паркуй %s%s%s сначала");
   PROGMEM Language_Str MSG_ZPROBE_OFFSETS                  = _UxGT("Отступы Z-датчика");
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_ZPROBE_XOFFSET                  = _UxGT("Смещение X");
   PROGMEM Language_Str MSG_ZPROBE_YOFFSET                  = _UxGT("Смещение Y");
   PROGMEM Language_Str MSG_ZPROBE_ZOFFSET                  = _UxGT("Смещение Z");
+=======
+  PROGMEM Language_Str MSG_ZPROBE_XOFFSET                  = _UxGT("Смещение по X");
+  PROGMEM Language_Str MSG_ZPROBE_YOFFSET                  = _UxGT("Смещение по Y");
+  PROGMEM Language_Str MSG_ZPROBE_ZOFFSET                  = _UxGT("Смещение по Z");
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_BABYSTEP_X                      = _UxGT("Микрошаг X");
   PROGMEM Language_Str MSG_BABYSTEP_Y                      = _UxGT("Микрошаг Y");
   PROGMEM Language_Str MSG_BABYSTEP_Z                      = _UxGT("Микрошаг Z");

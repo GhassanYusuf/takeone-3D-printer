@@ -184,7 +184,11 @@ class FilamentSensorBase {
         #ifdef FILAMENT_RUNOUT_SENSOR_DEBUG
           if (change) {
             SERIAL_ECHOPGM("Motion detected:");
+<<<<<<< HEAD
             LOOP_L_N(e, NUM_RUNOUT_SENSORS)
+=======
+            for (uint8_t e = 0; e < NUM_RUNOUT_SENSORS; e++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
               if (TEST(change, e)) SERIAL_CHAR(' ', '0' + e);
             SERIAL_EOL();
           }

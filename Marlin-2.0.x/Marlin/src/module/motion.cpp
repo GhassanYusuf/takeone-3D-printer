@@ -672,7 +672,11 @@ void restore_feedrate_and_scaling() {
       ) {
         const float dist_2 = HYPOT2(target.x - offs.x, target.y - offs.y);
         if (dist_2 > delta_max_radius_2)
+<<<<<<< HEAD
           target *= float(delta_max_radius / SQRT(dist_2)); // 200 / 300 = 0.66
+=======
+          target *= delta_max_radius / SQRT(dist_2); // 200 / 300 = 0.66
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       }
 
     #else
@@ -1320,8 +1324,21 @@ void do_homing_move(const AxisEnum axis, const float distance, const feedRate_t 
 
   #if HOMING_Z_WITH_PROBE && HAS_HEATED_BED && ENABLED(WAIT_FOR_BED_HEATER)
     // Wait for bed to heat back up between probing points
+<<<<<<< HEAD
     if (axis == Z_AXIS && distance < 0)
       thermalManager.wait_for_bed_heating();
+=======
+    if (axis == Z_AXIS && distance < 0 && thermalManager.isHeatingBed()) {
+      serialprintPGM(msg_wait_for_bed_heating);
+      #if HAS_DISPLAY
+        LCD_MESSAGEPGM(MSG_BED_HEATING);
+      #endif
+      thermalManager.wait_for_bed();
+      #if HAS_DISPLAY
+        ui.reset_status();
+      #endif
+    }
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
 
   // Only do some things when moving towards an endstop
@@ -1786,9 +1803,16 @@ void homeaxis(const AxisEnum axis) {
   #endif
 
   #if DISABLED(DELTA) && defined(HOMING_BACKOFF_MM)
+<<<<<<< HEAD
     const xyz_float_t endstop_backoff = HOMING_BACKOFF_MM;
     if (endstop_backoff[axis]) {
       current_position[axis] -= ABS(endstop_backoff[axis]) * axis_home_dir;
+=======
+    constexpr xyz_float_t endstop_backoff = HOMING_BACKOFF_MM;
+    const float backoff_mm = endstop_backoff[axis];
+    if (backoff_mm) {
+      current_position[axis] -= ABS(backoff_mm) * axis_home_dir;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       line_to_current_position(
         #if HOMING_Z_WITH_PROBE
           (axis == Z_AXIS) ? MMM_TO_MMS(Z_PROBE_SPEED_FAST) :

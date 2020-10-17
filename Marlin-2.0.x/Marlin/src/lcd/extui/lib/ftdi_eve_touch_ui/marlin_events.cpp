@@ -131,6 +131,7 @@ namespace ExtUI {
     }
   #endif
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/ftdi_eve_touch_ui/marlin_events.cpp
   #if ENABLED(POWER_LOSS_RECOVERY)
     void onPowerLossResume() {
       // Called on resume from power-loss
@@ -139,10 +140,15 @@ namespace ExtUI {
 
   #if HAS_PID_HEATING
     void onPidTuning(const result_t rst) {
+=======
+  #if HAS_PID_HEATING
+    void OnPidTuning(const result_t rst) {
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/marlin_events.cpp
       // Called for temperature PID tuning result
       SERIAL_ECHOLNPAIR("OnPidTuning:", rst);
       switch (rst) {
         case PID_BAD_EXTRUDER_NUM:
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/ftdi_eve_touch_ui/marlin_events.cpp
           StatusScreen::setStatusMessage(STR_PID_BAD_EXTRUDER_NUM);
           break;
         case PID_TEMP_TOO_HIGH:
@@ -153,6 +159,18 @@ namespace ExtUI {
           break;
         case PID_DONE:
           StatusScreen::setStatusMessage(STR_PID_AUTOTUNE_FINISHED);
+=======
+          StatusScreen::setStatusMessage(MSG_PID_BAD_EXTRUDER_NUM);
+          break;
+        case PID_TEMP_TOO_HIGH:
+          StatusScreen::setStatusMessage(MSG_PID_TEMP_TOO_HIGH);
+          break;
+        case PID_TUNING_TIMEOUT:
+          StatusScreen::setStatusMessage(MSG_PID_TIMEOUT);
+          break;
+        case PID_DONE:
+          StatusScreen::setStatusMessage(MSG_PID_AUTOTUNE_FINISHED);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/ftdi_eve_touch_ui/marlin_events.cpp
           break;
       }
       GOTO_SCREEN(StatusScreen);

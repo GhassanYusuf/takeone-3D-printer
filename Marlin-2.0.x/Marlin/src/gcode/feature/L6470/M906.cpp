@@ -319,6 +319,7 @@ void GcodeSuite::M906() {
     #endif
     #if AXIS_IS_L64XX(X2)
       L64XX_REPORT_CURRENT(X2);
+<<<<<<< HEAD
     #endif
     #if AXIS_IS_L64XX(Y)
       L64XX_REPORT_CURRENT(Y);
@@ -361,6 +362,44 @@ void GcodeSuite::M906() {
     #endif
     #if AXIS_IS_L64XX(E7)
       L64XX_REPORT_CURRENT(E7);
+=======
+    #endif
+    #if AXIS_IS_L64XX(Y)
+      L64XX_REPORT_CURRENT(Y);
+    #endif
+    #if AXIS_IS_L64XX(Y2)
+      L64XX_REPORT_CURRENT(Y2);
+    #endif
+    #if AXIS_IS_L64XX(Z)
+      L64XX_REPORT_CURRENT(Z);
+    #endif
+    #if AXIS_IS_L64XX(Z2)
+      L64XX_REPORT_CURRENT(Z2);
+    #endif
+    #if AXIS_IS_L64XX(Z3)
+      L64XX_REPORT_CURRENT(Z3);
+    #endif
+    #if AXIS_IS_L64XX(Z4)
+      L64XX_REPORT_CURRENT(Z4);
+    #endif
+    #if AXIS_IS_L64XX(E0)
+      L64XX_REPORT_CURRENT(E0);
+    #endif
+    #if AXIS_IS_L64XX(E1)
+      L64XX_REPORT_CURRENT(E1);
+    #endif
+    #if AXIS_IS_L64XX(E2)
+      L64XX_REPORT_CURRENT(E2);
+    #endif
+    #if AXIS_IS_L64XX(E3)
+      L64XX_REPORT_CURRENT(E3);
+    #endif
+    #if AXIS_IS_L64XX(E4)
+      L64XX_REPORT_CURRENT(E4);
+    #endif
+    #if AXIS_IS_L64XX(E5)
+      L64XX_REPORT_CURRENT(E5);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
 
     L64xxManager.spi_active = false;   // done with all SPI transfers - clear handshake flags

@@ -28,7 +28,11 @@
 #include "../../inc/MarlinConfig.h"
 #include "../shared/Delay.h"
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/STM32/HAL.cpp
 #if HAS_TMC_SW_SERIAL
+=======
+#if TMC_HAS_SW_SERIAL
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_STM32/HAL.cpp
   #include "SoftwareSerial.h"
 #endif
 
@@ -87,7 +91,11 @@ void HAL_init() {
   while (!LL_PWR_IsActiveFlag_BRR());
   #endif // EEPROM_EMULATED_SRAM
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/STM32/HAL.cpp
   #if HAS_TMC_SW_SERIAL
+=======
+  #if TMC_HAS_SW_SERIAL
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_STM32/HAL.cpp
     SoftwareSerial::setInterruptPriority(SWSERIAL_TIMER_IRQ_PRIO, 0);
   #endif
 }

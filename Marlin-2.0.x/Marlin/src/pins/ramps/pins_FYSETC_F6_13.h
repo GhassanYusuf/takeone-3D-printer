@@ -33,8 +33,17 @@
   #define BOARD_INFO_NAME "FYSETC F6 1.3"
 #endif
 
+<<<<<<< HEAD
 #define RESET_PIN                             30
 #define SPI_FLASH_CS                          83
+=======
+#ifndef BOARD_INFO_NAME
+  #define BOARD_INFO_NAME "FYSETC F6 1.3"
+#endif
+
+#define RESET_PIN          30
+#define SPI_FLASH_CS       83
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // Servos
@@ -47,6 +56,7 @@
 //
 // Limit Switches
 //
+<<<<<<< HEAD
 #define X_MIN_PIN                             63
 #define X_MAX_PIN                             64
 #define Y_MIN_PIN                             14
@@ -54,6 +64,15 @@
 #define Z_MIN_PIN                             12
 #ifndef Z_MAX_PIN
   #define Z_MAX_PIN                            9
+=======
+#define X_MIN_PIN          63
+#define X_MAX_PIN          64
+#define Y_MIN_PIN          14
+#define Y_MAX_PIN          15
+#define Z_MIN_PIN          12
+#ifndef Z_MAX_PIN
+  #define Z_MAX_PIN         9
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 #ifndef FIL_RUNOUT_PIN
@@ -125,6 +144,7 @@
    * At the moment, F6 rx pins are not pc interrupt pins
    */
   #ifndef X_SERIAL_RX_PIN
+<<<<<<< HEAD
     #define X_SERIAL_RX_PIN                   -1  // 71
   #endif
   #ifndef X_SERIAL_TX_PIN
@@ -159,6 +179,42 @@
   #endif
   #ifndef E2_SERIAL_TX_PIN
     #define E2_SERIAL_TX_PIN                  82
+=======
+    #define X_SERIAL_RX_PIN  -1   // 71
+  #endif
+  #ifndef X_SERIAL_TX_PIN
+    #define X_SERIAL_TX_PIN  72
+  #endif
+  #ifndef Y_SERIAL_RX_PIN
+    #define Y_SERIAL_RX_PIN  -1   // 73
+  #endif
+  #ifndef Y_SERIAL_TX_PIN
+    #define Y_SERIAL_TX_PIN  75
+  #endif
+  #ifndef Z_SERIAL_RX_PIN
+    #define Z_SERIAL_RX_PIN  -1   // 78
+  #endif
+  #ifndef Z_SERIAL_TX_PIN
+    #define Z_SERIAL_TX_PIN  79
+  #endif
+  #ifndef E0_SERIAL_RX_PIN
+    #define E0_SERIAL_RX_PIN -1   // 76
+  #endif
+  #ifndef E0_SERIAL_TX_PIN
+    #define E0_SERIAL_TX_PIN 77
+  #endif
+  #ifndef E1_SERIAL_RX_PIN
+    #define E1_SERIAL_RX_PIN -1   // 80
+  #endif
+  #ifndef E1_SERIAL_TX_PIN
+    #define E1_SERIAL_TX_PIN 81
+  #endif
+  #ifndef E2_SERIAL_RX_PIN
+    #define E2_SERIAL_RX_PIN -1   // 22
+  #endif
+  #ifndef E2_SERIAL_TX_PIN
+    #define E2_SERIAL_TX_PIN 82
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
 #endif
 
@@ -222,11 +278,19 @@
   #define DOGLCD_CS                           17
 
   #if ENABLED(FYSETC_GENERIC_12864_1_1)
+<<<<<<< HEAD
     #define LCD_BACKLIGHT_PIN                 27
   #endif
 
   #define KILL_PIN                            41
   #define LCD_RESET_PIN                       23  // Must be high or open for LCD to operate normally.
+=======
+    #define LCD_BACKLIGHT_PIN 27
+  #endif
+
+  #define KILL_PIN         41
+  #define LCD_RESET_PIN    23   // Must be high or open for LCD to operate normally.
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
                                 // Seems to work best if left open.
 
   #if EITHER(FYSETC_MINI_12864_1_2, FYSETC_MINI_12864_2_0)

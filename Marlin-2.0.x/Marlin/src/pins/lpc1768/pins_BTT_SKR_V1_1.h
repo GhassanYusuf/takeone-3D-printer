@@ -97,7 +97,11 @@
 // https://www.facebook.com/groups/505736576548648/permalink/630639874058317/
 #ifndef SDCARD_CONNECTION
   #if EITHER(MKS_MINI_12864, ENDER2_STOCKDISPLAY)
+<<<<<<< HEAD
     #define SDCARD_CONNECTION                LCD
+=======
+    #define SDCARD_CONNECTION LCD
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #else
     #define SDCARD_CONNECTION            ONBOARD
   #endif

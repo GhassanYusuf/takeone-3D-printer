@@ -23,7 +23,11 @@
 #include "../gcode.h"
 
 #include "../../lcd/ultralcd.h" // for lcd_reset_alert_level
+<<<<<<< HEAD
 #include "../../MarlinCore.h"   // for marlin_state
+=======
+#include "../../MarlinCore.h"   // for Running
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #include "../queue.h"           // for flush_and_request_resend
 
 /**

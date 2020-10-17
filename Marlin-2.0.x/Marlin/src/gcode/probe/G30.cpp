@@ -39,6 +39,12 @@
  *   E   Engage the probe for each probe (default 1)
  */
 void GcodeSuite::G30() {
+<<<<<<< HEAD
+=======
+
+  const xy_pos_t pos = { parser.linearval('X', current_position.x + probe_offset_xy.x),
+                         parser.linearval('Y', current_position.y + probe_offset_xy.y) };
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
   const xy_pos_t pos = { parser.linearval('X', current_position.x + probe.offset_xy.x),
                          parser.linearval('Y', current_position.y + probe.offset_xy.y) };

@@ -36,6 +36,8 @@
 
 extern const char NUL_STR[];
 
+extern const char NUL_STR[];
+
 namespace ExtUI {
 
   void onStartup() {
@@ -123,7 +125,11 @@ namespace ExtUI {
   }
 
   #if ENABLED(POWER_LOSS_RECOVERY)
+<<<<<<< HEAD
     void onPowerLossResume() {
+=======
+    void OnPowerLossResume() {
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       // Called on resume from power-loss
       ScreenHandler.GotoScreen(DGUSLCD_SCREEN_POWER_LOSS);
     }
@@ -131,6 +137,7 @@ namespace ExtUI {
 
 
   #if HAS_PID_HEATING
+<<<<<<< HEAD
     void onPidTuning(const result_t rst) {
       // Called for temperature PID tuning result
       SERIAL_ECHOLNPAIR("onPidTuning:",rst);
@@ -146,6 +153,23 @@ namespace ExtUI {
           break;
         case PID_DONE:
           ScreenHandler.setstatusmessagePGM(PSTR(STR_PID_AUTOTUNE_FINISHED));
+=======
+    void OnPidTuning(const result_t rst) {
+      // Called for temperature PID tuning result
+      SERIAL_ECHOLNPAIR("OnPidTuning:",rst);
+      switch(rst) {
+        case PID_BAD_EXTRUDER_NUM:
+          ScreenHandler.setstatusmessagePGM(PSTR(MSG_PID_BAD_EXTRUDER_NUM));
+          break;
+        case PID_TEMP_TOO_HIGH:
+          ScreenHandler.setstatusmessagePGM(PSTR(MSG_PID_TEMP_TOO_HIGH));
+          break;
+        case PID_TUNING_TIMEOUT:
+          ScreenHandler.setstatusmessagePGM(PSTR(MSG_PID_TIMEOUT));
+          break;
+        case PID_DONE:
+          ScreenHandler.setstatusmessagePGM(PSTR(MSG_PID_AUTOTUNE_FINISHED));
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           break;
       }
       ScreenHandler.GotoScreen(DGUSLCD_SCREEN_MAIN);

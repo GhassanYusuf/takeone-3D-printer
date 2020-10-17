@@ -341,10 +341,17 @@ namespace ExtUI {
   void onConfigurationStoreWritten(bool success);
   void onConfigurationStoreRead(bool success);
   #if ENABLED(POWER_LOSS_RECOVERY)
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/ui_api.h
     void onPowerLossResume();
   #endif
   #if HAS_PID_HEATING
     void onPidTuning(const result_t rst);
+=======
+    void OnPowerLossResume();
+  #endif
+  #if HAS_PID_HEATING
+    void OnPidTuning(const result_t rst);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/ui_api.h
   #endif
 };
 

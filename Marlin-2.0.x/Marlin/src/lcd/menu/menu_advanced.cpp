@@ -114,8 +114,13 @@ void menu_cancelobject();
       #if EXTRUDERS == 1
         EDIT_ITEM(float42_52, MSG_ADVANCE_K, &planner.extruder_advance_K[0], 0, 999);
       #elif EXTRUDERS > 1
+<<<<<<< HEAD
         LOOP_L_N(n, EXTRUDERS)
           EDIT_ITEM_N(float42_52, n, MSG_ADVANCE_K_E, &planner.extruder_advance_K[n], 0, 999);
+=======
+        for (uint8_t n = 0; n < EXTRUDERS; n++)
+          EDIT_ITEM_N(float52, n, MSG_ADVANCE_K_E, &planner.extruder_advance_K[n], 0, 999);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     #endif
 
@@ -125,7 +130,11 @@ void menu_cancelobject();
       if (parser.volumetric_enabled) {
         EDIT_ITEM_FAST(float43, MSG_FILAMENT_DIAM, &planner.filament_size[active_extruder], 1.5f, 3.25f, planner.calculate_volumetric_multipliers);
         #if EXTRUDERS > 1
+<<<<<<< HEAD
           LOOP_L_N(n, EXTRUDERS)
+=======
+          for (uint8_t n = 0; n < EXTRUDERS; n++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
             EDIT_ITEM_FAST_N(float43, n, MSG_FILAMENT_DIAM_E, &planner.filament_size[n], 1.5f, 3.25f, planner.calculate_volumetric_multipliers);
         #endif
       }
@@ -142,13 +151,21 @@ void menu_cancelobject();
 
       EDIT_ITEM_FAST(float3, MSG_FILAMENT_UNLOAD, &fc_settings[active_extruder].unload_length, 0, extrude_maxlength);
       #if EXTRUDERS > 1
+<<<<<<< HEAD
         LOOP_L_N(n, EXTRUDERS)
+=======
+        for (uint8_t n = 0; n < EXTRUDERS; n++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           EDIT_ITEM_FAST_N(float3, n, MSG_FILAMENTUNLOAD_E, &fc_settings[n].unload_length, 0, extrude_maxlength);
       #endif
 
       EDIT_ITEM_FAST(float3, MSG_FILAMENT_LOAD, &fc_settings[active_extruder].load_length, 0, extrude_maxlength);
       #if EXTRUDERS > 1
+<<<<<<< HEAD
         LOOP_L_N(n, EXTRUDERS)
+=======
+        for (uint8_t n = 0; n < EXTRUDERS; n++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           EDIT_ITEM_FAST_N(float3, n, MSG_FILAMENTLOAD_E, &fc_settings[n].load_length, 0, extrude_maxlength);
       #endif
     #endif
@@ -236,9 +253,33 @@ void menu_cancelobject();
 #if HOTENDS
   DEFINE_PIDTEMP_FUNCS(0);
   #if HOTENDS > 1 && ENABLED(PID_PARAMS_PER_HOTEND)
+<<<<<<< HEAD
     REPEAT_S(1, HOTENDS, DEFINE_PIDTEMP_FUNCS)
   #endif
 #endif
+=======
+    DEFINE_PIDTEMP_FUNCS(1);
+    #if HOTENDS > 2
+      DEFINE_PIDTEMP_FUNCS(2);
+      #if HOTENDS > 3
+        DEFINE_PIDTEMP_FUNCS(3);
+        #if HOTENDS > 4
+          DEFINE_PIDTEMP_FUNCS(4);
+          #if HOTENDS > 5
+            DEFINE_PIDTEMP_FUNCS(5);
+            #if HOTENDS > 6
+              DEFINE_PIDTEMP_FUNCS(6);
+              #if HOTENDS > 7
+                DEFINE_PIDTEMP_FUNCS(7);
+              #endif // HOTENDS > 7
+            #endif // HOTENDS > 6
+          #endif // HOTENDS > 5
+        #endif // HOTENDS > 4
+      #endif // HOTENDS > 3
+    #endif // HOTENDS > 2
+  #endif // HOTENDS > 1 && PID_PARAMS_PER_HOTEND
+#endif // HOTENDS
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 #define SHOW_MENU_ADVANCED_TEMPERATURE ((ENABLED(AUTOTEMP) && HAS_TEMP_HOTEND) || EITHER(PID_AUTOTUNE_MENU, PID_EDIT_MENU))
 
@@ -309,8 +350,31 @@ void menu_cancelobject();
 
     PID_EDIT_MENU_ITEMS(0);
     #if HOTENDS > 1 && ENABLED(PID_PARAMS_PER_HOTEND)
+<<<<<<< HEAD
       REPEAT_S(1, HOTENDS, PID_EDIT_MENU_ITEMS)
     #endif
+=======
+      PID_EDIT_MENU_ITEMS(1);
+      #if HOTENDS > 2
+        PID_EDIT_MENU_ITEMS(2);
+        #if HOTENDS > 3
+          PID_EDIT_MENU_ITEMS(3);
+          #if HOTENDS > 4
+            PID_EDIT_MENU_ITEMS(4);
+            #if HOTENDS > 5
+              PID_EDIT_MENU_ITEMS(5);
+              #if HOTENDS > 6
+                PID_EDIT_MENU_ITEMS(6);
+                #if HOTENDS > 7
+                  PID_EDIT_MENU_ITEMS(7);
+                #endif // HOTENDS > 7
+              #endif // HOTENDS > 6
+            #endif // HOTENDS > 5
+          #endif // HOTENDS > 4
+        #endif // HOTENDS > 3
+      #endif // HOTENDS > 2
+    #endif // HOTENDS > 1 && PID_PARAMS_PER_HOTEND
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
     END_MENU();
   }
@@ -358,7 +422,11 @@ void menu_cancelobject();
       EDIT_ITEM_FAST(float3, MSG_VMAX_E, &planner.settings.max_feedrate_mm_s[E_AXIS_N(active_extruder)], 1, max_fr_edit_scaled.e);
     #endif
     #if ENABLED(DISTINCT_E_FACTORS)
+<<<<<<< HEAD
       LOOP_L_N(n, E_STEPPERS)
+=======
+      for (uint8_t n = 0; n < E_STEPPERS; n++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         EDIT_ITEM_FAST_N(float3, n, MSG_VMAX_EN, &planner.settings.max_feedrate_mm_s[E_AXIS_N(n)], 1, max_fr_edit_scaled.e);
     #endif
 
@@ -409,7 +477,11 @@ void menu_cancelobject();
 
     #if ENABLED(DISTINCT_E_FACTORS)
       EDIT_ITEM_FAST(long5_25, MSG_AMAX_E, &planner.settings.max_acceleration_mm_per_s2[E_AXIS_N(active_extruder)], 100, max_accel_edit_scaled.e, []{ planner.reset_acceleration_rates(); });
+<<<<<<< HEAD
       LOOP_L_N(n, E_STEPPERS)
+=======
+      for (uint8_t n = 0; n < E_STEPPERS; n++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         EDIT_ITEM_FAST_N(long5_25, n, MSG_AMAX_EN, &planner.settings.max_acceleration_mm_per_s2[E_AXIS_N(n)], 100, max_accel_edit_scaled.e, []{ _reset_e_acceleration_rate(MenuItemBase::itemIndex); });
     #elif E_STEPPERS
       EDIT_ITEM_FAST(long5_25, MSG_AMAX_E, &planner.settings.max_acceleration_mm_per_s2[E_AXIS], 100, max_accel_edit_scaled.e, []{ planner.reset_acceleration_rates(); });
@@ -461,11 +533,17 @@ void menu_cancelobject();
     void menu_probe_offsets() {
       START_MENU();
       BACK_ITEM(MSG_ADVANCED_SETTINGS);
+<<<<<<< HEAD
       #if HAS_PROBE_XY_OFFSET
         EDIT_ITEM(float51sign, MSG_ZPROBE_XOFFSET, &probe.offset.x, -(X_BED_SIZE), X_BED_SIZE);
         EDIT_ITEM(float51sign, MSG_ZPROBE_YOFFSET, &probe.offset.y, -(Y_BED_SIZE), Y_BED_SIZE);
       #endif
       EDIT_ITEM(LCD_Z_OFFSET_TYPE, MSG_ZPROBE_ZOFFSET, &probe.offset.z, Z_PROBE_OFFSET_RANGE_MIN, Z_PROBE_OFFSET_RANGE_MAX);
+=======
+      EDIT_ITEM(float51sign, MSG_ZPROBE_XOFFSET, &probe_offset.x, -(X_BED_SIZE), X_BED_SIZE);
+      EDIT_ITEM(float51sign, MSG_ZPROBE_YOFFSET, &probe_offset.y, -(Y_BED_SIZE), Y_BED_SIZE);
+      EDIT_ITEM(LCD_Z_OFFSET_TYPE, MSG_ZPROBE_ZOFFSET, &probe_offset.z, Z_PROBE_OFFSET_RANGE_MIN, Z_PROBE_OFFSET_RANGE_MAX);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       END_MENU();
     }
   #endif
@@ -484,7 +562,11 @@ void menu_advanced_steps_per_mm() {
 
   #if ENABLED(DISTINCT_E_FACTORS)
     EDIT_ITEM_FAST(float51, MSG_E_STEPS, &planner.settings.axis_steps_per_mm[E_AXIS_N(active_extruder)], 5, 9999, []{ planner.refresh_positioning(); });
+<<<<<<< HEAD
     LOOP_L_N(n, E_STEPPERS)
+=======
+    for (uint8_t n = 0; n < E_STEPPERS; n++)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       EDIT_ITEM_FAST_N(float51, n, MSG_EN_STEPS, &planner.settings.axis_steps_per_mm[E_AXIS_N(n)], 5, 9999, []{ _planner_refresh_e_positioning(MenuItemBase::itemIndex); });
   #elif E_STEPPERS
     EDIT_ITEM_FAST(float51, MSG_E_STEPS, &planner.settings.axis_steps_per_mm[E_AXIS], 5, 9999, []{ planner.refresh_positioning(); });
@@ -558,8 +640,13 @@ void menu_advanced_settings() {
     #if EXTRUDERS == 1
       EDIT_ITEM(float42_52, MSG_ADVANCE_K, &planner.extruder_advance_K[0], 0, 999);
     #elif EXTRUDERS > 1
+<<<<<<< HEAD
       LOOP_L_N(n, E_STEPPERS)
         EDIT_ITEM_N(float42_52, n, MSG_ADVANCE_K_E, &planner.extruder_advance_K[n], 0, 999);
+=======
+      for (uint8_t n = 0; n < E_STEPPERS; n++)
+        EDIT_ITEM_N(float52, n, MSG_ADVANCE_K_E, &planner.extruder_advance_K[n], 0, 999);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
   #endif
 

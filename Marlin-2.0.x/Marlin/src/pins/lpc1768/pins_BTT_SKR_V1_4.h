@@ -24,6 +24,7 @@
 #ifndef BOARD_INFO_NAME
   #define BOARD_INFO_NAME "BIGTREE SKR 1.4"
 #endif
+<<<<<<< HEAD
 
 //
 // EEPROM
@@ -32,6 +33,8 @@
   #define FLASH_EEPROM_EMULATION
   //#define SDCARD_EEPROM_EMULATION
 #endif
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // SD Connection
@@ -55,9 +58,19 @@
 #define E1_DIAG_PIN                        P1_25  // E1DET
 
 //
+// TMC StallGuard DIAG pins
+//
+#define X_DIAG_PIN         P1_29   // X-STOP
+#define Y_DIAG_PIN         P1_28   // Y-STOP
+#define Z_DIAG_PIN         P1_27   // Z-STOP
+#define E0_DIAG_PIN        P1_26   // E0DET
+#define E1_DIAG_PIN        P1_25   // E1DET
+
+//
 // Limit Switches
 //
 #if X_STALL_SENSITIVITY
+<<<<<<< HEAD
   #define X_STOP_PIN                  X_DIAG_PIN
   #if X_HOME_DIR < 0
     #define X_MAX_PIN                      P1_26  // E0DET
@@ -90,6 +103,38 @@
   #ifndef Z_STOP_PIN
     #define Z_STOP_PIN                     P1_27  // Z-STOP
   #endif
+=======
+  #define X_STOP_PIN       X_DIAG_PIN
+  #if X_HOME_DIR < 0
+    #define X_MAX_PIN      P1_26   // E0DET
+  #else
+    #define X_MIN_PIN      P1_26   // E0DET
+  #endif
+#else
+  #define X_STOP_PIN       P1_29   // X-STOP
+#endif
+
+#if Y_STALL_SENSITIVITY
+  #define Y_STOP_PIN       Y_DIAG_PIN
+  #if Y_HOME_DIR < 0
+    #define Y_MAX_PIN      P1_25   // E1DET
+  #else
+    #define Y_MIN_PIN      P1_25   // E1DET
+  #endif
+#else
+  #define Y_STOP_PIN       P1_28   // Y-STOP
+#endif
+
+#if Z_STALL_SENSITIVITY
+  #define Z_STOP_PIN       Z_DIAG_PIN
+  #if Z_HOME_DIR < 0
+    #define Z_MAX_PIN      P1_24   // PWRDET
+  #else
+    #define Z_MIN_PIN      P1_24   // PWRDET
+  #endif
+#else
+  #define Z_STOP_PIN       P1_27   // Z-STOP
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 //
@@ -102,21 +147,34 @@
 //
 // Filament Runout Sensor
 //
+<<<<<<< HEAD
 #define FIL_RUNOUT_PIN                     P1_26  // E0DET
 #define FIL_RUNOUT2_PIN                    P1_25  // E1DET
+=======
+#define FIL_RUNOUT_PIN     P1_26   // E0DET
+#define FIL_RUNOUT2_PIN    P1_25   // E1DET
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // Power Supply Control
 //
 #ifndef PS_ON_PIN
+<<<<<<< HEAD
   #define PS_ON_PIN                        P1_00  // PWRDET
+=======
+  #define PS_ON_PIN        P1_00   // PWRDET
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 //
 // Power Loss Detection
 //
 #ifndef POWER_LOSS_PIN
+<<<<<<< HEAD
   #define POWER_LOSS_PIN                   P1_00  // PWRDET
+=======
+  #define POWER_LOSS_PIN   P1_00   // PWRDET
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 //

@@ -21,7 +21,11 @@
  */
 
 /**
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/gcode/temp/M141_M191.cpp
  * gcode/temp/M141_M191.cpp
+=======
+ * gcode/temperature/M141_M191.cpp
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/gcode/temperature/M141_M191.cpp
  *
  * Chamber target temperature control
  */

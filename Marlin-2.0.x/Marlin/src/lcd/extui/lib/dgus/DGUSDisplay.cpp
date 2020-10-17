@@ -25,6 +25,13 @@
 #include "../../../../inc/MarlinConfigPre.h"
 
 #if HAS_DGUS_LCD
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.cpp
+=======
+
+#if HOTENDS > 2
+  #error "More than 2 hotends not implemented on the Display UI design."
+#endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.cpp
 
 #if HOTENDS > 2
   #error "More than 2 hotends not implemented on the Display UI design."
@@ -41,12 +48,17 @@
 #include "../../../../libs/duration_t.h"
 #include "../../../../module/printcounter.h"
 #if ENABLED(POWER_LOSS_RECOVERY)
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.cpp
   #include "../../../../feature/powerloss.h"
 #endif
 
 #include "DGUSDisplay.h"
 #include "DGUSVPVariable.h"
 #include "DGUSDisplayDef.h"
+=======
+  #include "../../../../feature/power_loss_recovery.h"
+#endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.cpp
 
 // Preamble... 2 Bytes, usually 0x5A 0xA5, but configurable
 constexpr uint8_t DGUS_HEADER1 = 0x5A;
@@ -603,7 +615,11 @@ void DGUSScreenVariableHandler::HandleManualExtrude(DGUS_VP_Variable &var, void 
   skipVP = var.VP;
 }
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.cpp
 #if ENABLED(DGUS_UI_MOVE_DIS_OPTION)
+=======
+#if ENABLED(DUGS_UI_MOVE_DIS_OPTION)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.cpp
   void DGUSScreenVariableHandler::HandleManualMoveOption(DGUS_VP_Variable &var, void *val_ptr) {
     DEBUG_ECHOLNPGM("HandleManualMoveOption");
     *(uint16_t*)var.memadr = swap16(*(uint16_t*)val_ptr);
@@ -614,7 +630,11 @@ void DGUSScreenVariableHandler::HandleManualMove(DGUS_VP_Variable &var, void *va
   DEBUG_ECHOLNPGM("HandleManualMove");
 
   int16_t movevalue = swap16(*(uint16_t*)val_ptr);
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.cpp
   #if ENABLED(DGUS_UI_MOVE_DIS_OPTION)
+=======
+  #if ENABLED(DUGS_UI_MOVE_DIS_OPTION)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.cpp
     const uint16_t choice = *(uint16_t*)var.memadr;
     movevalue = movevalue > 0 ? choice : -choice;
   #endif
@@ -855,8 +875,13 @@ void DGUSScreenVariableHandler::HandleStepPerMMExtruderChanged(DGUS_VP_Variable 
 void DGUSScreenVariableHandler::HandleProbeOffsetZChanged(DGUS_VP_Variable &var, void *val_ptr) {
   DEBUG_ECHOLNPGM("HandleProbeOffsetZChanged");
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.cpp
   const float offset = float(int16_t(swap16(*(uint16_t*)val_ptr))) / 100.0f;
   ExtUI::setZOffset_mm(offset);
+=======
+  uint16_t value = swap16(*(uint16_t*)val_ptr)/100;
+  ExtUI::setZOffset_mm(value);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.cpp
   ScreenHandler.skipVP = var.VP; // don't overwrite value the next update time as the display might autoincrement in parallel
   return;
 }
@@ -867,7 +892,11 @@ void DGUSScreenVariableHandler::HandleProbeOffsetZChanged(DGUS_VP_Variable &var,
 
     int16_t flag = swap16(*(uint16_t*)val_ptr);
     int16_t steps = flag ? -20 : 20;
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.cpp
     ExtUI::smartAdjustAxis_steps(steps, ExtUI::axis_t::Z, true);
+=======
+    ExtUI::smartAdjustAxis_steps(steps,ExtUI::axis_t::Z,true);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.cpp
     ScreenHandler.ForceCompleteUpdate();
     return;
   }

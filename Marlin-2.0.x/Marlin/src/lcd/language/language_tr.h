@@ -246,7 +246,10 @@ namespace Language_tr {
   PROGMEM Language_Str MSG_CHAMBER                         = _UxGT("Çevirme");
   PROGMEM Language_Str MSG_FAN_SPEED                       = _UxGT("Fan Hızı");
   PROGMEM Language_Str MSG_FAN_SPEED_N                     = _UxGT("Fan Hızı ~");
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_STORED_FAN_N                    = _UxGT("Depolanan Fan ~");
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_EXTRA_FAN_SPEED                 = _UxGT("Ekstra Fan Hızı");
   PROGMEM Language_Str MSG_EXTRA_FAN_SPEED_N               = _UxGT("Ekstra Fan Hızı ~");
   PROGMEM Language_Str MSG_FLOW                            = _UxGT("Akış");

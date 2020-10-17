@@ -21,7 +21,11 @@
  */
 
 /**
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/gcode/temp/M104_M109.cpp
  * gcode/temp/M104_M109.cpp
+=======
+ * gcode/temperature/M104_M109.cpp
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/gcode/temperature/M104_M109.cpp
  *
  * Hotend target temperature control
  */

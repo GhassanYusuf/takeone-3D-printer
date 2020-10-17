@@ -26,8 +26,11 @@
 
 #if BOTH(WIFISUPPORT, WEBSUPPORT)
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/ESP32/web.cpp
 #include "../../inc/MarlinConfig.h"
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_ESP32/web.cpp
 #undef DISABLED  // esp32-hal-gpio.h
 #include <SPIFFS.h>
 #include "wifi.h"

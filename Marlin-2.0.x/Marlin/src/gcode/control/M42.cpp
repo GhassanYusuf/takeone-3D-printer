@@ -46,6 +46,7 @@ void GcodeSuite::M42() {
 
   const pin_t pin = GET_PIN_MAP_PIN(pin_index);
 
+<<<<<<< HEAD
   if (!parser.boolval('I') && pin_is_protected(pin)) return protected_pin_err();
 
   if (parser.seenval('M')) {
@@ -64,6 +65,8 @@ void GcodeSuite::M42() {
   if (!parser.seenval('S')) return;
   const byte pin_status = parser.value_byte();
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #if FAN_COUNT > 0
     switch (pin) {
       #if HAS_FAN0
@@ -93,6 +96,11 @@ void GcodeSuite::M42() {
     }
   #endif
 
+<<<<<<< HEAD
+=======
+  if (!parser.boolval('I') && pin_is_protected(pin)) return protected_pin_err();
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   pinMode(pin, OUTPUT);
   extDigitalWrite(pin, pin_status);
   analogWrite(pin, pin_status);

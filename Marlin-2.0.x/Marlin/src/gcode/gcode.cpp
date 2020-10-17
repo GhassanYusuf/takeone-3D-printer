@@ -53,7 +53,11 @@ GcodeSuite gcode;
   #include "../feature/cancel_object.h"
 #endif
 
+<<<<<<< HEAD
 #include "../MarlinCore.h" // for idle()
+=======
+#include "../MarlinCore.h" // for idle() and suspend_auto_report
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 millis_t GcodeSuite::previous_move_ms;
 
@@ -752,10 +756,13 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 702: M702(); break;                                  // M702: Unload Filament
       #endif
 
+<<<<<<< HEAD
       #if ENABLED(CONTROLLER_FAN_EDITABLE)
         case 710: M710(); break;                                  // M710: Set Controller Fan settings
       #endif
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #if ENABLED(GCODE_MACROS)
         case 810: case 811: case 812: case 813: case 814:
         case 815: case 816: case 817: case 818: case 819:
@@ -868,7 +875,15 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 7219: M7219(); break;                                // M7219: Set LEDs, columns, and rows
       #endif
 
+<<<<<<< HEAD
       default: parser.unknown_command_warning(); break;
+=======
+      #if ENABLED(MAX7219_GCODE)
+        case 7219: M7219(); break;                                // M7219: Set LEDs, columns, and rows
+      #endif
+
+      default: parser.unknown_command_error(); break;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     }
     break;
 
@@ -878,7 +893,11 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
       #if ENABLED(WIFI_CUSTOM_COMMAND)
         if (wifi_custom_command(parser.command_ptr)) break;
       #endif
+<<<<<<< HEAD
       parser.unknown_command_warning();
+=======
+      parser.unknown_command_error();
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   }
 
   if (!no_ok) queue.ok_to_send();

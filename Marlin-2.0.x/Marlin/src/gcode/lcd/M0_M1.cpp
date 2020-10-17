@@ -27,6 +27,7 @@
 #include "../../inc/MarlinConfig.h"
 
 #include "../gcode.h"
+<<<<<<< HEAD
 
 #include "../../module/planner.h" // for synchronize()
 #include "../../MarlinCore.h"     // for wait_for_user_response()
@@ -35,6 +36,22 @@
   #include "../../lcd/ultralcd.h"
 #elif ENABLED(EXTENSIBLE_UI)
   #include "../../lcd/extui/ui_api.h"
+=======
+#include "../../module/planner.h"
+
+#include "../../inc/MarlinConfig.h"
+
+#if HAS_LCD_MENU
+  #include "../../lcd/ultralcd.h"
+#endif
+
+#if ENABLED(EXTENSIBLE_UI)
+  #include "../../lcd/extensible_ui/ui_api.h"
+#endif
+
+#if HAS_LEDS_OFF_FLAG
+  #include "../../feature/leds/printer_event_leds.h"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 #if ENABLED(HOST_PROMPT_SUPPORT)

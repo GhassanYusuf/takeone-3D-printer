@@ -238,10 +238,14 @@ namespace Language_zh_TW {
   PROGMEM Language_Str MSG_BED                             = " " LCD_STR_THERMOMETER _UxGT(" 熱床");     //"Bed"
   PROGMEM Language_Str MSG_CHAMBER                         = _UxGT("Enclosure");
   PROGMEM Language_Str MSG_FAN_SPEED                       = _UxGT("風扇速率");     //"Fan speed"
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_FAN_SPEED_N                     = _UxGT("風扇速率 =");
   PROGMEM Language_Str MSG_STORED_FAN_N                    = _UxGT("Stored Fan =");
+=======
+  PROGMEM Language_Str MSG_FAN_SPEED_N                     = _UxGT("風扇速率 ~");
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_EXTRA_FAN_SPEED                 = _UxGT("額外風扇速率");     // "Extra fan speed"
-  PROGMEM Language_Str MSG_EXTRA_FAN_SPEED_N               = _UxGT("額外風扇速率 =");
+  PROGMEM Language_Str MSG_EXTRA_FAN_SPEED_N               = _UxGT("額外風扇速率 ~");
   PROGMEM Language_Str MSG_FLOW                            = _UxGT("擠出速率");
   PROGMEM Language_Str MSG_FLOW_N                          = _UxGT("擠出速率 ~");     //"Flow"
   PROGMEM Language_Str MSG_CONTROL                         = _UxGT("控制");     //"Control"
@@ -249,6 +253,7 @@ namespace Language_zh_TW {
   PROGMEM Language_Str MSG_MAX                             = " " LCD_STR_THERMOMETER _UxGT(" 最大");     //" " LCD_STR_THERMOMETER " Max"
   PROGMEM Language_Str MSG_FACTOR                          = " " LCD_STR_THERMOMETER _UxGT(" 系數");     //" " LCD_STR_THERMOMETER " Fact"
   PROGMEM Language_Str MSG_AUTOTEMP                        = _UxGT("自動控溫");     //"Autotemp"
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_LCD_ON                          = _UxGT("開 ");     //"On"
   PROGMEM Language_Str MSG_LCD_OFF                         = _UxGT("關 ");     //"Off"
   PROGMEM Language_Str MSG_PID_AUTOTUNE                    = _UxGT("PID Autotune");
@@ -263,6 +268,10 @@ namespace Language_zh_TW {
   PROGMEM Language_Str MSG_PID_C_E                         = _UxGT("PID-C *");
   PROGMEM Language_Str MSG_PID_F                           = _UxGT("PID-F");    //"PID-F"
   PROGMEM Language_Str MSG_PID_F_E                         = _UxGT("PID-F *");
+=======
+  PROGMEM Language_Str MSG_LCD_ON                          = _UxGT("開");     //"On"
+  PROGMEM Language_Str MSG_LCD_OFF                         = _UxGT("關");     //"Off"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_SELECT                          = _UxGT("選擇");     //"Select"
   PROGMEM Language_Str MSG_SELECT_E                        = _UxGT("選擇 *");
   PROGMEM Language_Str MSG_ACC                             = _UxGT("加速度");     //"Accel" acceleration
@@ -309,12 +318,16 @@ namespace Language_zh_TW {
   PROGMEM Language_Str MSG_LOAD_EEPROM                     = _UxGT("載入設置");     //"Load memory"
   PROGMEM Language_Str MSG_RESTORE_DEFAULTS                = _UxGT("恢復安全值");     //"Restore failsafe"
   PROGMEM Language_Str MSG_INIT_EEPROM                     = _UxGT("初始化設置");     // "Initialize EEPROM"
+<<<<<<< HEAD
   PROGMEM Language_Str MSG_ERR_EEPROM_CRC                  = _UxGT("錯誤: EEPROM CRC");    //"Err: EEPROM CRC"
   PROGMEM Language_Str MSG_ERR_EEPROM_INDEX                = _UxGT("錯誤: EEPROM Index");    //"Err: EEPROM Index"
   PROGMEM Language_Str MSG_ERR_EEPROM_VERSION              = _UxGT("錯誤: EEPROM Version");    //"EEPROM Version"
   PROGMEM Language_Str MSG_MEDIA_UPDATE                    = _UxGT("媒體更新");    //"Media Update"
   PROGMEM Language_Str MSG_RESET_PRINTER                   = _UxGT("重置打印機");    //"Reset Printer
   PROGMEM Language_Str MSG_REFRESH                         = _UxGT("刷新");     //"Refresh"
+=======
+  PROGMEM Language_Str MSG_REFRESH                         = LCD_STR_REFRESH  _UxGT("刷新");     //"Refresh"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   PROGMEM Language_Str MSG_INFO_SCREEN                     = _UxGT("資訊界面");     //"Info screen"
   PROGMEM Language_Str MSG_PREPARE                         = _UxGT("準備");     //"Prepare"
   PROGMEM Language_Str MSG_TUNE                            = _UxGT("調整");     //"Tune"

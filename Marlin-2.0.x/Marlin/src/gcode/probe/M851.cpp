@@ -39,17 +39,29 @@ void GcodeSuite::M851() {
   if (!parser.seen("XYZ")) {
     SERIAL_ECHOLNPAIR_P(
       #if HAS_PROBE_XY_OFFSET
+<<<<<<< HEAD
         PSTR(STR_PROBE_OFFSET " X"), probe.offset_xy.x, SP_Y_STR, probe.offset_xy.y, SP_Z_STR
       #else
         PSTR(STR_PROBE_OFFSET " X0 Y0 Z")
       #endif
       , probe.offset.z
+=======
+        PSTR(MSG_PROBE_OFFSET " X"), probe_offset.x, SP_Y_STR, probe_offset.y, SP_Z_STR
+      #else
+        PSTR(MSG_PROBE_OFFSET " X0 Y0 Z")
+      #endif
+      , probe_offset.z
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     );
     return;
   }
 
   // Start with current offsets and modify
+<<<<<<< HEAD
   xyz_pos_t offs = probe.offset;
+=======
+  xyz_pos_t offs = probe_offset;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
   // Assume no errors
   bool ok = true;

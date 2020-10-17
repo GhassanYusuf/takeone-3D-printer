@@ -60,6 +60,10 @@
   #error "TMCStepper includes SoftwareSerial.h which is incompatible with ENDSTOP_INTERRUPTS_FEATURE. Disable ENDSTOP_INTERRUPTS_FEATURE to continue."
 #endif
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/AVR/inc/SanityCheck.h
 #if HAS_TMC_SW_SERIAL && ENABLED(MONITOR_DRIVER_STATUS)
+=======
+#if TMC_HAS_SW_SERIAL && ENABLED(MONITOR_DRIVER_STATUS)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_AVR/inc/SanityCheck.h
   #error "MONITOR_DRIVER_STATUS causes performance issues when used with SoftwareSerial-connected drivers. Disable MONITOR_DRIVER_STATUS or use hardware serial to continue."
 #endif

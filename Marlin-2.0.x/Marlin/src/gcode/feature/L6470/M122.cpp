@@ -99,6 +99,7 @@ void GcodeSuite::M122() {
   #endif
   #if AXIS_IS_L64XX(X2)
     L6470_say_status(X2);
+<<<<<<< HEAD
   #endif
   #if AXIS_IS_L64XX(Y)
     L6470_say_status(Y);
@@ -141,6 +142,44 @@ void GcodeSuite::M122() {
   #endif
   #if AXIS_IS_L64XX(E7)
     L6470_say_status(E7);
+=======
+  #endif
+  #if AXIS_IS_L64XX(Y)
+    L6470_say_status(Y);
+  #endif
+  #if AXIS_IS_L64XX(Y2)
+    L6470_say_status(Y2);
+  #endif
+  #if AXIS_IS_L64XX(Z)
+    L6470_say_status(Z);
+  #endif
+  #if AXIS_IS_L64XX(Z2)
+    L6470_say_status(Z2);
+  #endif
+  #if AXIS_IS_L64XX(Z3)
+    L6470_say_status(Z3);
+  #endif
+  #if AXIS_IS_L64XX(Z4)
+    L6470_say_status(Z4);
+  #endif
+  #if AXIS_IS_L64XX(E0)
+    L6470_say_status(E0);
+  #endif
+  #if AXIS_IS_L64XX(E1)
+    L6470_say_status(E1);
+  #endif
+  #if AXIS_IS_L64XX(E2)
+    L6470_say_status(E2);
+  #endif
+  #if AXIS_IS_L64XX(E3)
+    L6470_say_status(E3);
+  #endif
+  #if AXIS_IS_L64XX(E4)
+    L6470_say_status(E4);
+  #endif
+  #if AXIS_IS_L64XX(E5)
+    L6470_say_status(E5);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
 
   L64xxManager.spi_active = false;   // done with all SPI transfers - clear handshake flags

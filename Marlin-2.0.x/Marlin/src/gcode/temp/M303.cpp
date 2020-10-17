@@ -28,7 +28,11 @@
 #include "../../module/temperature.h"
 
 #if ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/gcode/temp/M303.cpp
   #include "../../lcd/extui/ui_api.h"
+=======
+  #include "../../lcd/extensible_ui/ui_api.h"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/gcode/temperature/M303.cpp
 #endif
 
 /**
@@ -71,9 +75,15 @@ void GcodeSuite::M303() {
   #endif
   const heater_ind_t e = (heater_ind_t)parser.intval('E');
   if (!WITHIN(e, SI, EI)) {
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/gcode/temp/M303.cpp
     SERIAL_ECHOLNPGM(STR_PID_BAD_EXTRUDER_NUM);
     #if ENABLED(EXTENSIBLE_UI)
       ExtUI::onPidTuning(ExtUI::result_t::PID_BAD_EXTRUDER_NUM);
+=======
+    SERIAL_ECHOLNPGM(MSG_PID_BAD_EXTRUDER_NUM);
+    #if ENABLED(EXTENSIBLE_UI)
+      ExtUI::OnPidTuning(ExtUI::result_t::PID_BAD_EXTRUDER_NUM);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/gcode/temperature/M303.cpp
     #endif
     return;
   }

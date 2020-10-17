@@ -1,6 +1,10 @@
 /**
  * Marlin 3D Printer Firmware
+<<<<<<< HEAD
  * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+=======
+ * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -87,12 +91,21 @@
 //
 // Fans
 //
+<<<<<<< HEAD
 #define FAN_PIN                                8
 #define ORIG_E0_AUTO_FAN_PIN                  30
 #define ORIG_E1_AUTO_FAN_PIN                  30
 #define ORIG_E2_AUTO_FAN_PIN                  30
 #define ORIG_E3_AUTO_FAN_PIN                  30
 //#define ORIG_CHAMBER_AUTO_FAN_PIN           10
+=======
+#define FAN_PIN               8
+#define ORIG_E0_AUTO_FAN_PIN 30
+#define ORIG_E1_AUTO_FAN_PIN 30
+#define ORIG_E2_AUTO_FAN_PIN 30
+#define ORIG_E3_AUTO_FAN_PIN 30
+//#define ORIG_CHAMBER_AUTO_FAN_PIN 10
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // Misc. Functions

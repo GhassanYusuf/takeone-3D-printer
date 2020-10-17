@@ -29,11 +29,28 @@
 
 #include "motion.h"
 
+<<<<<<< HEAD
 #if HAS_BED_PROBE
   enum ProbePtRaise : uint8_t {
     PROBE_PT_NONE,      // No raise or stow after run_z_probe
     PROBE_PT_STOW,      // Do a complete stow after run_z_probe
     PROBE_PT_RAISE,     // Raise to "between" clearance after run_z_probe
+=======
+  #if HAS_PROBE_XY_OFFSET
+    extern xyz_pos_t &probe_offset_xy;
+  #else
+    constexpr xy_pos_t probe_offset_xy{0};
+  #endif
+
+  bool set_probe_deployed(const bool deploy);
+  #ifdef Z_AFTER_PROBING
+    void move_z_after_probing();
+  #endif
+  enum ProbePtRaise : unsigned char {
+    PROBE_PT_NONE,  // No raise or stow after run_z_probe
+    PROBE_PT_STOW,  // Do a complete stow after run_z_probe
+    PROBE_PT_RAISE, // Raise to "between" clearance after run_z_probe
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     PROBE_PT_BIG_RAISE  // Raise to big clearance after run_z_probe
   };
 #endif
@@ -41,7 +58,12 @@
 class Probe {
 public:
 
+<<<<<<< HEAD
   #if HAS_BED_PROBE
+=======
+  constexpr xyz_pos_t probe_offset{0};
+  constexpr xy_pos_t probe_offset_xy{0};
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
     static xyz_pos_t offset;
 
@@ -50,6 +72,7 @@ public:
 
     #if IS_KINEMATIC
 
+<<<<<<< HEAD
       #if HAS_PROBE_XY_OFFSET
         // Return true if the both nozzle and the probe can reach the given point.
         // Note: This won't work on SCARA since the probe offset rotates with the arm.
@@ -61,8 +84,18 @@ public:
         FORCE_INLINE static bool can_reach(const float &rx, const float &ry) {
           return position_is_reachable(rx, ry, MIN_PROBE_EDGE);
         }
+=======
+#if HAS_BED_PROBE || HAS_LEVELING
+  #if IS_KINEMATIC
+    constexpr float printable_radius = (
+      #if ENABLED(DELTA)
+        DELTA_PRINTABLE_RADIUS
+      #elif IS_SCARA
+        SCARA_PRINTABLE_RADIUS
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
 
+<<<<<<< HEAD
     #else
 
       /**
@@ -86,6 +119,10 @@ public:
     static float probe_at_point(const float &rx, const float &ry, const ProbePtRaise raise_after=PROBE_PT_NONE, const uint8_t verbose_level=0, const bool probe_relative=true, const bool sanity_check=true);
     static inline float probe_at_point(const xy_pos_t &pos, const ProbePtRaise raise_after=PROBE_PT_NONE, const uint8_t verbose_level=0, const bool probe_relative=true, const bool sanity_check=true) {
       return probe_at_point(pos.x, pos.y, raise_after, verbose_level, probe_relative, sanity_check);
+=======
+    inline float probe_radius() {
+      return printable_radius - _MAX(MIN_PROBE_EDGE, HYPOT(probe_offset_xy.x, probe_offset_xy.y));
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     }
 
   #else
@@ -98,6 +135,7 @@ public:
 
   #endif
 
+<<<<<<< HEAD
   FORCE_INLINE static bool can_reach(const xy_pos_t &pos) { return can_reach(pos.x, pos.y); }
 
   FORCE_INLINE static bool good_bounds(const xy_pos_t &lf, const xy_pos_t &rb) {
@@ -106,6 +144,41 @@ public:
          can_reach(lf.x, 0) && can_reach(rb.x, 0) && can_reach(0, lf.y) && can_reach(0, rb.y)
       #else
          can_reach(lf) && can_reach(rb)
+=======
+  inline float probe_min_x() {
+    return (
+      #if IS_KINEMATIC
+        (X_CENTER) - probe_radius()
+      #else
+        _MAX((X_MIN_BED) + (MIN_PROBE_EDGE_LEFT), (X_MIN_POS) + probe_offset_xy.x)
+      #endif
+    );
+  }
+  inline float probe_max_x() {
+    return (
+      #if IS_KINEMATIC
+        (X_CENTER) + probe_radius()
+      #else
+        _MIN((X_MAX_BED) - (MIN_PROBE_EDGE_RIGHT), (X_MAX_POS) + probe_offset_xy.x)
+      #endif
+    );
+  }
+  inline float probe_min_y() {
+    return (
+      #if IS_KINEMATIC
+        (Y_CENTER) - probe_radius()
+      #else
+        _MAX((Y_MIN_BED) + (MIN_PROBE_EDGE_FRONT), (Y_MIN_POS) + probe_offset_xy.y)
+      #endif
+    );
+  }
+  inline float probe_max_y() {
+    return (
+      #if IS_KINEMATIC
+        (Y_CENTER) + probe_radius()
+      #else
+        _MIN((Y_MAX_BED) - (MIN_PROBE_EDGE_BACK), (Y_MAX_POS) + probe_offset_xy.y)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     );
   }

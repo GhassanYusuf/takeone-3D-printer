@@ -438,7 +438,13 @@ constexpr uint32_t NS_TO_PULSE_TIMER_TICKS(uint32_t NS) { return (NS + (NS_PER_P
  */
 void Stepper::set_directions() {
 
+<<<<<<< HEAD
   DIR_WAIT_BEFORE();
+=======
+  #if MINIMUM_STEPPER_PRE_DIR_DELAY > 0
+    DELAY_NS(MINIMUM_STEPPER_PRE_DIR_DELAY);
+  #endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
   #define SET_STEP_DIR(A)                       \
     if (motor_direction(_AXIS(A))) {            \
@@ -1521,7 +1527,11 @@ void Stepper::pulse_phase_isr() {
   // Take multiple steps per interrupt (For high speed moves)
   #if ISR_MULTI_STEPS
     bool firstStep = true;
+<<<<<<< HEAD
     USING_TIMED_PULSE();
+=======
+    hal_timer_t end_tick_count = 0;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
   xyze_bool_t step_needed{0};
 
@@ -1573,7 +1583,11 @@ void Stepper::pulse_phase_isr() {
           // Don't step E here - But remember the number of steps to perform
           motor_direction(E_AXIS) ? --LA_steps : ++LA_steps;
         #else
+<<<<<<< HEAD
           step_needed.e = true;
+=======
+          step_needed.e = delta_error.e >= 0;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         #endif
       }
     #elif HAS_E0_STEP
@@ -1638,6 +1652,18 @@ void Stepper::pulse_phase_isr() {
       #endif
     #endif
 
+<<<<<<< HEAD
+=======
+      #else // !MIXING_EXTRUDER
+
+        #if HAS_E0_STEP
+          PULSE_STOP(E);
+        #endif
+
+      #endif  // !MIXING_EXTRUDER
+    #endif // !LIN_ADVANCE
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #if ISR_MULTI_STEPS
       if (events_to_do) START_LOW_PULSE();
     #endif
@@ -2025,7 +2051,11 @@ uint32_t Stepper::block_phase_isr() {
     // Step E stepper if we have steps
     #if ISR_MULTI_STEPS
       bool firstStep = true;
+<<<<<<< HEAD
       USING_TIMED_PULSE();
+=======
+      hal_timer_t end_tick_count = 0;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
 
     while (LA_steps) {
@@ -2497,6 +2527,14 @@ void Stepper::report_positions() {
   #endif
   #define EXTRA_CYCLES_BABYSTEP (STEP_PULSE_CYCLES - (CYCLES_EATEN_BABYSTEP))
 
+<<<<<<< HEAD
+=======
+  #define _ENABLE_AXIS(AXIS) ENABLE_AXIS_## AXIS()
+  #define _READ_DIR(AXIS) AXIS ##_DIR_READ()
+  #define _INVERT_DIR(AXIS) INVERT_## AXIS ##_DIR
+  #define _APPLY_DIR(AXIS, INVERT) AXIS ##_APPLY_DIR(INVERT, true)
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #if EXTRA_CYCLES_BABYSTEP > 20
     #define _SAVE_START() const hal_timer_t pulse_start = HAL_timer_get_count(PULSE_TIMER_NUM)
     #define _PULSE_WAIT() while (EXTRA_CYCLES_BABYSTEP > (uint32_t)(HAL_timer_get_count(PULSE_TIMER_NUM) - pulse_start) * (PULSE_TIMER_PRESCALE)) { /* nada */ }
@@ -2525,6 +2563,7 @@ void Stepper::report_positions() {
 
     #define BABYSTEP_AXIS(AXIS, INV, DIR) do{           \
       const uint8_t old_dir = _READ_DIR(AXIS);          \
+<<<<<<< HEAD
       _ENABLE_AXIS(AXIS);                               \
       DIR_WAIT_BEFORE();                                \
       _APPLY_DIR(AXIS, _INVERT_DIR(AXIS)^DIR^INV);      \
@@ -2534,6 +2573,16 @@ void Stepper::report_positions() {
       _PULSE_WAIT();                                    \
       _APPLY_STEP(AXIS, _INVERT_STEP_PIN(AXIS), true);  \
       EXTRA_DIR_WAIT_BEFORE();                          \
+=======
+      _ENABLE_AXIS(AXIS);                                    \
+      DELAY_NS(MINIMUM_STEPPER_PRE_DIR_DELAY);              \
+      _APPLY_DIR(AXIS, _INVERT_DIR(AXIS)^DIR^INVERT);   \
+      DELAY_NS(MINIMUM_STEPPER_POST_DIR_DELAY);              \
+      _SAVE_START;                                      \
+      _APPLY_STEP(AXIS)(!_INVERT_STEP_PIN(AXIS), true); \
+      _PULSE_WAIT;                                      \
+      _APPLY_STEP(AXIS)(_INVERT_STEP_PIN(AXIS), true);  \
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       _APPLY_DIR(AXIS, old_dir);                        \
       EXTRA_DIR_WAIT_AFTER();                           \
     }while(0)

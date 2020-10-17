@@ -304,7 +304,11 @@
     static constexpr bool XONOFF            = false;
     static constexpr bool EMERGENCYPARSER   = false;
     static constexpr bool DROPPED_RX        = false;
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/AVR/MarlinSerial.h
     static constexpr bool RX_OVERRUNS       = HAS_DGUS_LCD && ENABLED(DGUS_SERIAL_STATS_RX_BUFFER_OVERRUNS);
+=======
+    static constexpr bool RX_OVERRUNS       = bDGUS_SERIAL_STATS_RX_BUFFER_OVERRUNS;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_AVR/MarlinSerial.h
     static constexpr bool RX_FRAMING_ERRORS = false;
     static constexpr bool MAX_RX_QUEUED     = false;
   };

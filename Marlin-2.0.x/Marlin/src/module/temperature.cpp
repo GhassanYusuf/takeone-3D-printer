@@ -33,7 +33,11 @@
 #include "../core/language.h"
 #include "../HAL/shared/Delay.h"
 #if ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD
   #include "../lcd/extui/ui_api.h"
+=======
+  #include "../lcd/extensible_ui/ui_api.h"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 #if ENABLED(MAX6675_IS_MAX31865)
@@ -409,9 +413,15 @@ volatile bool Temperature::raw_temps_ready = false;
     #endif
 
     if (target > GHV(BED_MAXTEMP - 10, temp_range[heater].maxtemp - 15)) {
+<<<<<<< HEAD
       SERIAL_ECHOLNPGM(STR_PID_TEMP_TOO_HIGH);
       #if ENABLED(EXTENSIBLE_UI)
         ExtUI::onPidTuning(ExtUI::result_t::PID_TEMP_TOO_HIGH);
+=======
+      SERIAL_ECHOLNPGM(MSG_PID_TEMP_TOO_HIGH);
+      #if ENABLED(EXTENSIBLE_UI)
+        ExtUI::OnPidTuning(ExtUI::result_t::PID_TEMP_TOO_HIGH);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
       return;
     }
@@ -525,9 +535,15 @@ volatile bool Temperature::raw_temps_ready = false;
         #define MAX_OVERSHOOT_PID_AUTOTUNE 30
       #endif
       if (current_temp > target + MAX_OVERSHOOT_PID_AUTOTUNE) {
+<<<<<<< HEAD
         SERIAL_ECHOLNPGM(STR_PID_TEMP_TOO_HIGH);
         #if ENABLED(EXTENSIBLE_UI)
           ExtUI::onPidTuning(ExtUI::result_t::PID_TEMP_TOO_HIGH);
+=======
+        SERIAL_ECHOLNPGM(MSG_PID_TEMP_TOO_HIGH);
+        #if ENABLED(EXTENSIBLE_UI)
+          ExtUI::OnPidTuning(ExtUI::result_t::PID_TEMP_TOO_HIGH);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         #endif
         break;
       }
@@ -572,9 +588,15 @@ volatile bool Temperature::raw_temps_ready = false;
       #endif
       if (((ms - t1) + (ms - t2)) > (MAX_CYCLE_TIME_PID_AUTOTUNE * 60L * 1000L)) {
         #if ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD
           ExtUI::onPidTuning(ExtUI::result_t::PID_TUNING_TIMEOUT);
         #endif
         SERIAL_ECHOLNPGM(STR_PID_TIMEOUT);
+=======
+          ExtUI::OnPidTuning(ExtUI::result_t::PID_TUNING_TIMEOUT);
+        #endif
+        SERIAL_ECHOLNPGM(MSG_PID_TIMEOUT);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         break;
       }
 
@@ -623,7 +645,11 @@ volatile bool Temperature::raw_temps_ready = false;
           printerEventLEDs.onPidTuningDone(color);
         #endif
         #if ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD
           ExtUI::onPidTuning(ExtUI::result_t::PID_DONE);
+=======
+          ExtUI::OnPidTuning(ExtUI::result_t::PID_DONE);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         #endif
 
         goto EXIT_M303;
@@ -637,7 +663,11 @@ volatile bool Temperature::raw_temps_ready = false;
       printerEventLEDs.onPidTuningDone(color);
     #endif
     #if ENABLED(EXTENSIBLE_UI)
+<<<<<<< HEAD
       ExtUI::onPidTuning(ExtUI::result_t::PID_DONE);
+=======
+      ExtUI::OnPidTuning(ExtUI::result_t::PID_DONE);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
 
     EXIT_M303:
@@ -681,8 +711,30 @@ int16_t Temperature::getHeaterPower(const heater_ind_t heater_id) {
     static const uint8_t fanBit[] PROGMEM = {
       0
       #if HOTENDS > 1
+<<<<<<< HEAD
         #define _NEXT_FAN(N) , REPEAT2(N,_EFAN,N) N
         RREPEAT_S(1, HOTENDS, _NEXT_FAN)
+=======
+        , REPEAT2(1,_EFAN,1) 1
+        #if HOTENDS > 2
+          , REPEAT2(2,_EFAN,2) 2
+          #if HOTENDS > 3
+            , REPEAT2(3,_EFAN,3) 3
+            #if HOTENDS > 4
+              , REPEAT2(4,_EFAN,4) 4
+              #if HOTENDS > 5
+                , REPEAT2(5,_EFAN,5) 5
+                #if HOTENDS > 6
+                  , REPEAT2(6,_EFAN,6) 6
+                  #if HOTENDS > 7
+                    , REPEAT2(7,_EFAN,7) 7
+                  #endif
+                #endif
+              #endif
+            #endif
+          #endif
+        #endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
       #if HAS_AUTO_CHAMBER_FAN
         #define _CFAN(B) _FANOVERLAP(CHAMBER,B) ? B :
@@ -1067,7 +1119,11 @@ void Temperature::manage_heater() {
         // Make sure temperature is increasing
         if (watch_hotend[e].next_ms && ELAPSED(ms, watch_hotend[e].next_ms)) {  // Time to check this extruder?
           if (degHotend(e) < watch_hotend[e].target)                            // Failed to increase enough?
+<<<<<<< HEAD
             _temp_error((heater_ind_t)e, str_t_heating_failed, GET_TEXT(MSG_HEATING_FAILED_LCD));
+=======
+            _temp_error((heater_ind_t)e, PSTR(MSG_T_HEATING_FAILED), GET_TEXT(MSG_HEATING_FAILED_LCD));
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           else                                                                  // Start again if the target is still far off
             start_watching_hotend(e);
         }
@@ -1657,9 +1713,16 @@ void Temperature::init() {
   #endif
 
   #if MB(RUMBA)
+<<<<<<< HEAD
     // Disable RUMBA JTAG in case the thermocouple extension is plugged on top of JTAG connector
     #define _AD(N) ANY(HEATER_##N##_USES_AD595, HEATER_##N##_USES_AD8495)
     #if  _AD(0) || _AD(1) || _AD(2) || _AD(BED) || _AD(CHAMBER)
+=======
+    #define _AD(N) ANY(HEATER_##N##_USES_AD595, HEATER_##N##_USES_AD8495)
+    #if  _AD(0) || _AD(1) || _AD(2) /* RUMBA has 3 E plugs // || _AD(3) || _AD(4) || _AD(5) || _AD(6) || _AD(7) */ \
+      || _AD(BED) || _AD(CHAMBER)
+      // Disable RUMBA JTAG in case the thermocouple extension is plugged on top of JTAG connector
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       MCUCR = _BV(JTD);
       MCUCR = _BV(JTD);
     #endif
@@ -2122,7 +2185,11 @@ void Temperature::disable_all_heaters() {
 
   bool Temperature::over_autostart_threshold() {
     #if HOTENDS
+<<<<<<< HEAD
       HOTEND_LOOP() if (degTargetHotend(e) > (EXTRUDE_MINTEMP) / 2) return true;
+=======
+      HOTEND_LOOP() if (degTargetHotend(e) < (EXTRUDE_MINTEMP) / 2) return true;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
     #if HAS_HEATED_BED
       if (degTargetBed() > BED_MINTEMP) return true;
@@ -2310,6 +2377,7 @@ void Temperature::update_raw_temperatures() {
     #elif DISABLED(HEATER_1_USES_MAX6675)
       temp_hotend[1].update();
     #endif
+<<<<<<< HEAD
   #endif
 
   #if HAS_TEMP_ADC_2
@@ -2330,6 +2398,27 @@ void Temperature::update_raw_temperatures() {
   #if HAS_TEMP_ADC_7
     temp_hotend[7].update();
   #endif
+=======
+    #if HAS_TEMP_ADC_2
+      temp_hotend[2].update();
+      #if HAS_TEMP_ADC_3
+        temp_hotend[3].update();
+        #if HAS_TEMP_ADC_4
+          temp_hotend[4].update();
+          #if HAS_TEMP_ADC_5
+            temp_hotend[5].update();
+            #if HAS_TEMP_ADC_6
+              temp_hotend[6].update();
+              #if HAS_TEMP_ADC_7
+                temp_hotend[7].update();
+              #endif // HAS_TEMP_ADC_7
+            #endif // HAS_TEMP_ADC_6
+          #endif // HAS_TEMP_ADC_5
+        #endif // HAS_TEMP_ADC_4
+      #endif // HAS_TEMP_ADC_3
+    #endif // HAS_TEMP_ADC_2
+  #endif // HAS_TEMP_ADC_1
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
   #if HAS_HEATED_BED
     temp_bed.update();

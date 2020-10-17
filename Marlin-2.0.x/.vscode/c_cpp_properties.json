@@ -1,0 +1,100 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/include",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/Marlin",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/TMC26XStepper",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/SlowSoftI2CMaster",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/SailfishRGB_LED",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/SailfishLCD",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/Arduino-L6470/src",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/LiquidTWI2",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/Adafruit_MAX31865",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/U8glib-HAL_ID1932/src",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/Adafruit NeoPixel_ID28",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/TMCStepper_ID5513/src",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/LiquidCrystal_ID136",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/variants/mega",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit BusIO",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit GFX Library",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit NeoPixel",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit SSD1306",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/ArduinoJson/src",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/Button_ID919",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/LiquidCrystal_ID887/src",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/PubSubClient_ID89/src",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/TimeTrigger",
+                "C:/Users/Ghassan Yusuf/.platformio/lib/U8glib_ID7/src",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/Ghassan Yusuf/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/include",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/Marlin",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/TMC26XStepper",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/SlowSoftI2CMaster",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/SailfishRGB_LED",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/SailfishLCD",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/Arduino-L6470/src",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/LiquidTWI2",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/Adafruit_MAX31865",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/U8glib-HAL_ID1932/src",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/Adafruit NeoPixel_ID28",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/TMCStepper_ID5513/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "D:/Downloads/Marlin-2.0.x (1)/Marlin-2.0.x/.pio/libdeps/megaatmega2560/LiquidCrystal_ID136",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/variants/mega",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit BusIO",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit GFX Library",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit NeoPixel",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/Adafruit SSD1306",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/ArduinoJson/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/Button_ID919",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/LiquidCrystal_ID887/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/PubSubClient_ID89/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/TimeTrigger",
+                    "C:/Users/Ghassan Yusuf/.platformio/lib/U8glib_ID7/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/Ghassan Yusuf/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=40304",
+                "ARDUINO_AVR_MEGA2560",
+                "__MARLIN_FIRMWARE__",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega2560__",
+                ""
+            ],
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "C:/Users/Ghassan Yusuf/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega2560",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

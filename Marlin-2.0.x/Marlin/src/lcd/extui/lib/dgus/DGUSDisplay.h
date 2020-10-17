@@ -26,9 +26,12 @@
 #include "../../../../inc/MarlinConfigPre.h"
 
 #include "../../../../MarlinCore.h"
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.h
 #if HAS_BED_PROBE
   #include "../../../../module/probe.h"
 #endif
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.h
 #include "DGUSVPVariable.h"
 
 enum DGUSLCD_Screens : uint8_t;
@@ -119,7 +122,11 @@ public:
   static void HandleTemperatureChanged(DGUS_VP_Variable &var, void *val_ptr);
   // Hook for "Change Flowrate"
   static void HandleFlowRateChanged(DGUS_VP_Variable &var, void *val_ptr);
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.h
   #if ENABLED(DGUS_UI_MOVE_DIS_OPTION)
+=======
+  #if ENABLED(DUGS_UI_MOVE_DIS_OPTION)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.h
     // Hook for manual move option
     static void HandleManualMoveOption(DGUS_VP_Variable &var, void *val_ptr);
   #endif
@@ -143,10 +150,15 @@ public:
     // Hook for PID autotune
     static void HandlePIDAutotune(DGUS_VP_Variable &var, void *val_ptr);
   #endif
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/DGUSDisplay.h
   #if HAS_BED_PROBE
     // Hook for "Change probe offset z"
     static void HandleProbeOffsetZChanged(DGUS_VP_Variable &var, void *val_ptr);
   #endif
+=======
+  // Hook for "Change probe offset z"
+  static void HandleProbeOffsetZChanged(DGUS_VP_Variable &var, void *val_ptr);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplay.h
   #if ENABLED(BABYSTEPPING)
     // Hook for live z adjust action
     static void HandleLiveAdjustZ(DGUS_VP_Variable &var, void *val_ptr);

@@ -324,6 +324,30 @@ void homeaxis(const AxisEnum axis);
     return position_is_reachable(pos.x, pos.y, inset);
   }
 
+<<<<<<< HEAD
+=======
+  #if HAS_BED_PROBE
+
+    #if HAS_PROBE_XY_OFFSET
+
+      // Return true if the both nozzle and the probe can reach the given point.
+      // Note: This won't work on SCARA since the probe offset rotates with the arm.
+      inline bool position_is_reachable_by_probe(const float &rx, const float &ry) {
+        return position_is_reachable(rx - probe_offset.x, ry - probe_offset.y)
+               && position_is_reachable(rx, ry, ABS(MIN_PROBE_EDGE));
+      }
+
+    #else
+
+      FORCE_INLINE bool position_is_reachable_by_probe(const float &rx, const float &ry) {
+        return position_is_reachable(rx, ry, MIN_PROBE_EDGE);
+      }
+
+    #endif
+
+  #endif // HAS_BED_PROBE
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #else // CARTESIAN
 
   // Return true if the given position is within the machine bounds.
@@ -340,6 +364,26 @@ void homeaxis(const AxisEnum axis);
   }
   inline bool position_is_reachable(const xy_pos_t &pos) { return position_is_reachable(pos.x, pos.y); }
 
+<<<<<<< HEAD
+=======
+  #if HAS_BED_PROBE
+
+    /**
+     * Return whether the given position is within the bed, and whether the nozzle
+     * can reach the position required to put the probe at the given position.
+     *
+     * Example: For a probe offset of -10,+10, then for the probe to reach 0,0 the
+     *          nozzle must be be able to reach +10,-10.
+     */
+    inline bool position_is_reachable_by_probe(const float &rx, const float &ry) {
+      return position_is_reachable(rx - probe_offset_xy.x, ry - probe_offset_xy.y)
+          && WITHIN(rx, probe_min_x() - slop, probe_max_x() + slop)
+          && WITHIN(ry, probe_min_y() - slop, probe_max_y() + slop);
+    }
+
+  #endif // HAS_BED_PROBE
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif // CARTESIAN
 
 /**

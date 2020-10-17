@@ -66,6 +66,9 @@
 #if HOTENDS == 1 && TEMP_SENSOR_PROBE
   #define TEMP_PROBE_PIN              TEMP_1_PIN
 #endif
+#if HOTENDS == 1 && TEMP_SENSOR_PROBE
+  #define TEMP_PROBE_PIN   P0_25_A2   // TEMP_1_PIN
+#endif
 
 //
 // Heaters / Fans

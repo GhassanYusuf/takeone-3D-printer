@@ -478,7 +478,11 @@ void HAL_adc_init() {
   #if ADC_IS_REQUIRED
     memset(HAL_adc_results, 0xFF, sizeof(HAL_adc_results));                 // Fill result with invalid values
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/SAMD51/HAL.cpp
     LOOP_L_N(pi, COUNT(adc_pins))
+=======
+    for (uint8_t pi = 0; pi < COUNT(adc_pins); ++pi)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_SAMD51/HAL.cpp
       pinPeripheral(adc_pins[pi], PIO_ANALOG);
 
     LOOP_S_LE_N(ai, FIRST_ADC, LAST_ADC) {

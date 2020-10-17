@@ -37,7 +37,11 @@
  */
 
 // Change EEPROM version if the structure changes
+<<<<<<< HEAD
 #define EEPROM_VERSION "V76"
+=======
+#define EEPROM_VERSION "V75"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #define EEPROM_OFFSET 100
 
 // Check the integrity of data offsets.
@@ -119,6 +123,7 @@
 #endif
 
 #if ENABLED(PROBE_TEMP_COMPENSATION)
+<<<<<<< HEAD
   #include "../feature/probe_temp_comp.h"
 #endif
 
@@ -130,6 +135,9 @@
 #define HAS_CASE_LIGHT_BRIGHTNESS (ENABLED(CASE_LIGHT_MENU) && DISABLED(CASE_LIGHT_NO_BRIGHTNESS))
 #if HAS_CASE_LIGHT_BRIGHTNESS
   #include "../feature/caselight.h"
+=======
+  #include "../feature/probe_temp_compensation.h"
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 #pragma pack(push, 1) // No padding between variables
@@ -260,6 +268,7 @@ typedef struct SettingsDataStruct {
           z2_endstop_adj,                               // M666 (S2) Z
           z3_endstop_adj,                               // M666 (S3) Z
           z4_endstop_adj;                               // M666 (S4) Z
+<<<<<<< HEAD
   #endif
 
   //
@@ -270,6 +279,8 @@ typedef struct SettingsDataStruct {
     #if ENABLED(Z_STEPPER_ALIGN_KNOWN_STEPPER_POSITIONS)
       xy_pos_t z_stepper_align_stepper_xy[NUM_Z_STEPPER_DRIVERS];   // M422 W X Y
     #endif
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
 
   //
@@ -790,8 +801,24 @@ void MarlinSettings::postprocess() {
         EEPROM_WRITE(TERN(Y_DUAL_ENDSTOPS, endstops.y2_endstop_adj, dummyf));   // 1 float
         EEPROM_WRITE(TERN(Z_MULTI_ENDSTOPS, endstops.z2_endstop_adj, dummyf));  // 1 float
 
+<<<<<<< HEAD
         #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 3
           EEPROM_WRITE(endstops.z3_endstop_adj);   // 1 float
+=======
+        #if ENABLED(Z_MULTI_ENDSTOPS)
+          EEPROM_WRITE(endstops.z2_endstop_adj);   // 1 float
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
+        #else
+          EEPROM_WRITE(dummyf);
+        #endif
+
+<<<<<<< HEAD
+        #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 4
+          EEPROM_WRITE(endstops.z4_endstop_adj);   // 1 float
+=======
+        #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 3
+          EEPROM_WRITE(endstops.z3_endstop_adj);   // 1 float
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
         #else
           EEPROM_WRITE(dummyf);
         #endif
@@ -799,7 +826,7 @@ void MarlinSettings::postprocess() {
         #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 4
           EEPROM_WRITE(endstops.z4_endstop_adj);   // 1 float
         #else
-          EEPROM_WRITE(dummyf);
+          EEPROM_WRITE(dummy);
         #endif
 
       #endif
@@ -1233,8 +1260,13 @@ void MarlinSettings::postprocess() {
       #if ENABLED(LIN_ADVANCE)
         EEPROM_WRITE(planner.extruder_advance_K);
       #else
+<<<<<<< HEAD
         dummyf = 0;
         for (uint8_t q = _MAX(EXTRUDERS, 1); q--;) EEPROM_WRITE(dummyf);
+=======
+        dummy = 0;
+        for (uint8_t q = _MAX(EXTRUDERS, 1); q--;) EEPROM_WRITE(dummy);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     }
 
@@ -1645,19 +1677,44 @@ void MarlinSettings::postprocess() {
 
           _FIELD_TEST(x2_endstop_adj);
 
+<<<<<<< HEAD
           EEPROM_READ(TERN(X_DUAL_ENDSTOPS, endstops.x2_endstop_adj, dummyf));  // 1 float
           EEPROM_READ(TERN(Y_DUAL_ENDSTOPS, endstops.y2_endstop_adj, dummyf));  // 1 float
           EEPROM_READ(TERN(Z_MULTI_ENDSTOPS, endstops.z2_endstop_adj, dummyf)); // 1 float
 
           #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 3
             EEPROM_READ(endstops.z3_endstop_adj); // 1 float
+=======
+          #if ENABLED(X_DUAL_ENDSTOPS)
+            EEPROM_READ(endstops.x2_endstop_adj);  // 1 float
+          #else
+            EEPROM_READ(dummy);
+          #endif
+          #if ENABLED(Y_DUAL_ENDSTOPS)
+            EEPROM_READ(endstops.y2_endstop_adj);  // 1 float
+          #else
+            EEPROM_READ(dummy);
+          #endif
+          #if ENABLED(Z_MULTI_ENDSTOPS)
+            EEPROM_READ(endstops.z2_endstop_adj); // 1 float
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
+          #else
+            EEPROM_READ(dummyf);
+          #endif
+<<<<<<< HEAD
+          #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 4
+            EEPROM_READ(endstops.z4_endstop_adj); // 1 float
+=======
+          #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 3
+            EEPROM_READ(endstops.z3_endstop_adj); // 1 float
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           #else
             EEPROM_READ(dummyf);
           #endif
           #if ENABLED(Z_MULTI_ENDSTOPS) && NUM_Z_STEPPER_DRIVERS >= 4
             EEPROM_READ(endstops.z4_endstop_adj); // 1 float
           #else
-            EEPROM_READ(dummyf);
+            EEPROM_READ(dummy);
           #endif
 
         #endif
@@ -2521,6 +2578,7 @@ void MarlinSettings::reset() {
     constexpr float dpo[] = NOZZLE_TO_PROBE_OFFSET;
     static_assert(COUNT(dpo) == 3, "NOZZLE_TO_PROBE_OFFSET must contain offsets for X, Y, and Z.");
     #if HAS_PROBE_XY_OFFSET
+<<<<<<< HEAD
       LOOP_XYZ(a) probe.offset[a] = dpo[a];
     #else
       probe.offset.x = probe.offset.y = 0;
@@ -2534,6 +2592,13 @@ void MarlinSettings::reset() {
 
   #if ENABLED(Z_STEPPER_AUTO_ALIGN)
     z_stepper_align.reset_to_default();
+=======
+      LOOP_XYZ(a) probe_offset[a] = dpo[a];
+    #else
+      probe_offset.x = probe_offset.y = 0;
+      probe_offset.z = dpo[Z_AXIS];
+    #endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
 
   //
@@ -2724,7 +2789,11 @@ void MarlinSettings::reset() {
     LOOP_L_N(i, EXTRUDERS) {
       planner.extruder_advance_K[i] = LIN_ADVANCE_K;
       #if ENABLED(EXTRA_LIN_ADVANCE_K)
+<<<<<<< HEAD
         other_extruder_advance_K[i] = LIN_ADVANCE_K;
+=======
+        saved_extruder_advance_K[i] = LIN_ADVANCE_K;
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     }
   #endif
@@ -2890,11 +2959,37 @@ void MarlinSettings::reset() {
       #elif EXTRUDERS
         LOOP_L_N(i, EXTRUDERS) {
           CONFIG_ECHO_START();
+<<<<<<< HEAD
           SERIAL_ECHOPGM("  M200");
           if (i) SERIAL_ECHOPAIR_P(SP_T_STR, int(i));
           SERIAL_ECHOLNPAIR(" D", LINEAR_UNIT(planner.filament_size[i]));
         }
       #endif
+=======
+          SERIAL_ECHOLNPAIR("  M200 T2 D", LINEAR_UNIT(planner.filament_size[2]));
+          #if EXTRUDERS > 3
+            CONFIG_ECHO_START();
+            SERIAL_ECHOLNPAIR("  M200 T3 D", LINEAR_UNIT(planner.filament_size[3]));
+            #if EXTRUDERS > 4
+              CONFIG_ECHO_START();
+              SERIAL_ECHOLNPAIR("  M200 T4 D", LINEAR_UNIT(planner.filament_size[4]));
+              #if EXTRUDERS > 5
+                CONFIG_ECHO_START();
+                SERIAL_ECHOLNPAIR("  M200 T5 D", LINEAR_UNIT(planner.filament_size[5]));
+                #if EXTRUDERS > 6
+                  CONFIG_ECHO_START();
+                  SERIAL_ECHOLNPAIR("  M200 T6 D", LINEAR_UNIT(planner.filament_size[6]));
+                  #if EXTRUDERS > 7
+                    CONFIG_ECHO_START();
+                    SERIAL_ECHOLNPAIR("  M200 T7 D", LINEAR_UNIT(planner.filament_size[7]));
+                  #endif // EXTRUDERS > 7
+                #endif // EXTRUDERS > 6
+              #endif // EXTRUDERS > 5
+            #endif // EXTRUDERS > 4
+          #endif // EXTRUDERS > 3
+        #endif // EXTRUDERS > 2
+      #endif // EXTRUDERS > 1
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
       if (!parser.volumetric_enabled)
         CONFIG_ECHO_MSG("  M200 D0");
@@ -3284,13 +3379,22 @@ void MarlinSettings::reset() {
       CONFIG_ECHO_START();
       SERIAL_ECHOLNPAIR_P(
         #if HAS_PROBE_XY_OFFSET
+<<<<<<< HEAD
           PSTR("  M851 X"), LINEAR_UNIT(probe.offset_xy.x),
                   SP_Y_STR, LINEAR_UNIT(probe.offset_xy.y),
+=======
+          PSTR("  M851 X"), LINEAR_UNIT(probe_offset_xy.x),
+                  SP_Y_STR, LINEAR_UNIT(probe_offset_xy.y),
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
                   SP_Z_STR
         #else
           PSTR("  M851 X0 Y0 Z")
         #endif
+<<<<<<< HEAD
         , LINEAR_UNIT(probe.offset.z)
+=======
+        , LINEAR_UNIT(probe_offset.z)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       );
     #endif
 
@@ -3645,10 +3749,36 @@ void MarlinSettings::reset() {
         say_M603(forReplay);
         SERIAL_ECHOLNPAIR("L", LINEAR_UNIT(fc_settings[0].load_length), " U", LINEAR_UNIT(fc_settings[0].unload_length));
       #else
+<<<<<<< HEAD
         #define _ECHO_603(N) do{ say_M603(forReplay); SERIAL_ECHOLNPAIR("T" STRINGIFY(N) " L", LINEAR_UNIT(fc_settings[N].load_length), " U", LINEAR_UNIT(fc_settings[N].unload_length)); }while(0);
         REPEAT(EXTRUDERS, _ECHO_603)
       #endif
     #endif
+=======
+        #define _ECHO_603(N) do{ say_M603(forReplay); SERIAL_ECHOLNPAIR("T" STRINGIFY(N) " L", LINEAR_UNIT(fc_settings[N].load_length), " U", LINEAR_UNIT(fc_settings[N].unload_length)); }while(0)
+        _ECHO_603(0);
+        _ECHO_603(1);
+        #if EXTRUDERS > 2
+          _ECHO_603(2);
+          #if EXTRUDERS > 3
+            _ECHO_603(3);
+            #if EXTRUDERS > 4
+              _ECHO_603(4);
+              #if EXTRUDERS > 5
+                _ECHO_603(5);
+                #if EXTRUDERS > 6
+                  _ECHO_603(6);
+                  #if EXTRUDERS > 7
+                    _ECHO_603(7);
+                  #endif // EXTRUDERS > 7
+                #endif // EXTRUDERS > 6
+              #endif // EXTRUDERS > 5
+            #endif // EXTRUDERS > 4
+          #endif // EXTRUDERS > 3
+        #endif // EXTRUDERS > 2
+      #endif // EXTRUDERS == 1
+    #endif // ADVANCED_PAUSE_FEATURE
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
     #if EXTRUDERS > 1
       CONFIG_ECHO_HEADING("Tool-changing:");

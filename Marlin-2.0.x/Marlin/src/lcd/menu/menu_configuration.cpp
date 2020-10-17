@@ -335,6 +335,7 @@ void menu_configuration() {
   #if ENABLED(BABYSTEP_ZPROBE_OFFSET)
     SUBMENU(MSG_ZPROBE_ZOFFSET, lcd_babystep_zoffset);
   #elif HAS_BED_PROBE
+<<<<<<< HEAD
     EDIT_ITEM(LCD_Z_OFFSET_TYPE, MSG_ZPROBE_ZOFFSET, &probe.offset.z, Z_PROBE_OFFSET_RANGE_MIN, Z_PROBE_OFFSET_RANGE_MAX);
   #endif
 
@@ -343,6 +344,9 @@ void menu_configuration() {
   //
   #if ENABLED(CONTROLLER_FAN_MENU)
     SUBMENU(MSG_CONTROLLER_FAN, menu_controller_fan);
+=======
+    EDIT_ITEM(LCD_Z_OFFSET_TYPE, MSG_ZPROBE_ZOFFSET, &probe_offset.z, Z_PROBE_OFFSET_RANGE_MIN, Z_PROBE_OFFSET_RANGE_MAX);
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #endif
 
   const bool busy = printer_busy();

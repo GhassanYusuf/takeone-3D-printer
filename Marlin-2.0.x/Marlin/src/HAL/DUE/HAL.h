@@ -56,7 +56,11 @@
 #ifdef SERIAL_PORT_2
   #if SERIAL_PORT_2 == SERIAL_PORT
     #error "SERIAL_PORT_2 must be different from SERIAL_PORT. Please update your configuration."
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/DUE/HAL.h
   #elif SERIAL_PORT_2 == -1 || ENABLED(EMERGENCY_PARSER)
+=======
+  #elif SERIAL_PORT_2 == -1
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_DUE/HAL.h
     #define MYSERIAL1 customizedSerial2
   #elif SERIAL_PORT_2 == 0
     #define MYSERIAL1 Serial
@@ -94,6 +98,10 @@
   #endif
 #endif
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/HAL/DUE/HAL.h
+=======
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/HAL/HAL_DUE/HAL.h
 #include "MarlinSerial.h"
 #include "MarlinSerialUSB.h"
 

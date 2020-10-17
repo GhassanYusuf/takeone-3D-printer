@@ -45,7 +45,11 @@
 #line 46
 
 // manually add pins that have names that are macros which don't play well with these macros
+<<<<<<< HEAD
 #if (AVR_ATmega2560_FAMILY || AVR_ATmega1284_FAMILY || defined(ARDUINO_ARCH_SAM) || defined(TARGET_LPC1768))
+=======
+#if (AVR_ATmega2560_FAMILY || AVR_ATmega1284_FAMILY || defined(ARDUINO_ARCH_SAM))
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #if SERIAL_PORT == 0
     static const char RXD_NAME_0[] PROGMEM = { "RXD0" };
     static const char TXD_NAME_0[] PROGMEM = { "TXD0" };
@@ -116,9 +120,12 @@ const PinInfo pin_array[] PROGMEM = {
     #elif AVR_ATmega1284_FAMILY
       { RXD_NAME_0, 8, true },
       { TXD_NAME_0, 9, true },
+<<<<<<< HEAD
     #elif defined(TARGET_LPC1768)
       { RXD_NAME_0, 3, true },
       { TXD_NAME_0, 2, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
   #elif SERIAL_PORT == 1
     #if (AVR_ATmega2560_FAMILY || defined(ARDUINO_ARCH_SAM))
@@ -127,25 +134,34 @@ const PinInfo pin_array[] PROGMEM = {
     #elif AVR_ATmega1284_FAMILY
       { RXD_NAME_1, 10, true },
       { TXD_NAME_1, 11, true },
+<<<<<<< HEAD
     #elif defined(TARGET_LPC1768)
       { RXD_NAME_1, 16, true },
       { TXD_NAME_1, 15, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
   #elif SERIAL_PORT == 2
     #if (AVR_ATmega2560_FAMILY || defined(ARDUINO_ARCH_SAM))
       { RXD_NAME_2, 17, true },
       { TXD_NAME_2, 16, true },
+<<<<<<< HEAD
     #elif defined(TARGET_LPC1768)
       { RXD_NAME_2, 11, true },
       { TXD_NAME_2, 10, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
   #elif SERIAL_PORT == 3
     #if (AVR_ATmega2560_FAMILY || defined(ARDUINO_ARCH_SAM))
       { RXD_NAME_3, 15, true },
       { TXD_NAME_3, 14, true },
+<<<<<<< HEAD
     #elif defined(TARGET_LPC1768)
       { RXD_NAME_3, 1, true },
       { TXD_NAME_3, 0, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #endif
   #endif
 
@@ -157,9 +173,12 @@ const PinInfo pin_array[] PROGMEM = {
       #elif AVR_ATmega1284_FAMILY
         { RXD_NAME_0, 8, true },
         { TXD_NAME_0, 9, true },
+<<<<<<< HEAD
       #elif defined(TARGET_LPC1768)
         { RXD_NAME_0, 3, true },
         { TXD_NAME_0, 2, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     #elif SERIAL_PORT_2 == 1
       #if (AVR_ATmega2560_FAMILY || defined(ARDUINO_ARCH_SAM))
@@ -168,25 +187,34 @@ const PinInfo pin_array[] PROGMEM = {
       #elif AVR_ATmega1284_FAMILY
         { RXD_NAME_1, 10, true },
         { TXD_NAME_1, 11, true },
+<<<<<<< HEAD
       #elif defined(TARGET_LPC1768)
         { RXD_NAME_1, 16, true },
         { TXD_NAME_1, 15, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     #elif SERIAL_PORT_2 == 2
       #if (AVR_ATmega2560_FAMILY || defined(ARDUINO_ARCH_SAM))
         { RXD_NAME_2, 17, true },
         { TXD_NAME_2, 16, true },
+<<<<<<< HEAD
       #elif defined(TARGET_LPC1768)
         { RXD_NAME_2, 11, true },
         { TXD_NAME_2, 10, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     #elif SERIAL_PORT_2 == 3
       #if (AVR_ATmega2560_FAMILY || defined(ARDUINO_ARCH_SAM))
         { RXD_NAME_3, 15, true },
         { TXD_NAME_3, 14, true },
+<<<<<<< HEAD
       #elif defined(TARGET_LPC1768)
         { RXD_NAME_3, 1, true },
         { TXD_NAME_3, 0, true },
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
     #endif
   #endif

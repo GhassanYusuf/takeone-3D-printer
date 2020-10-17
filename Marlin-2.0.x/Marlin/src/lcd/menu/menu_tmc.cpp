@@ -61,6 +61,9 @@ void menu_tmc_current() {
   #if AXIS_IS_TMC(Z4)
     TMC_EDIT_STORED_I_RMS(Z4, STR_Z4);
   #endif
+  #if AXIS_IS_TMC(Z4)
+    TMC_EDIT_STORED_I_RMS(Z4, MSG_Z4);
+  #endif
   #if AXIS_IS_TMC(E0)
     TMC_EDIT_STORED_I_RMS(E0, LCD_STR_E0);
   #endif
@@ -118,6 +121,9 @@ void menu_tmc_current() {
     #endif
     #if AXIS_HAS_STEALTHCHOP(Z4)
       TMC_EDIT_STORED_HYBRID_THRS(Z4, STR_Z4);
+    #endif
+    #if AXIS_HAS_STEALTHCHOP(Z4)
+      TMC_EDIT_STORED_HYBRID_THRS(Z4, MSG_Z4);
     #endif
     #if AXIS_HAS_STEALTHCHOP(E0)
       TMC_EDIT_STORED_HYBRID_THRS(E0, LCD_STR_E0);
@@ -203,6 +209,9 @@ void menu_tmc_current() {
     #endif
     #if AXIS_HAS_STEALTHCHOP(Z4)
       TMC_EDIT_STEP_MODE(Z4, STR_Z4);
+    #endif
+    #if AXIS_HAS_STEALTHCHOP(Z4)
+      TMC_EDIT_STEP_MODE(Z4, MSG_Z4);
     #endif
     #if AXIS_HAS_STEALTHCHOP(E0)
       TMC_EDIT_STEP_MODE(E0, LCD_STR_E0);

@@ -776,6 +776,7 @@ void MarlinUI::update() {
     // If the action button is pressed...
     static bool wait_for_unclick; // = false
 
+<<<<<<< HEAD
     auto do_click = [&]{
       wait_for_unclick = true;                        //  - Set debounce flag to ignore continous clicks
       lcd_clicked = !wait_for_user && !no_reentry;    //  - Keep the click if not waiting for a user-click
@@ -783,6 +784,8 @@ void MarlinUI::update() {
       quick_feedback();                               //  - Always make a click sound
     };
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     #if ENABLED(TOUCH_BUTTONS)
       if (touch_buttons) {
         RESET_STATUS_TIMEOUT();

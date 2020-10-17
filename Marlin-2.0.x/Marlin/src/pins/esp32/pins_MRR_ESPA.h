@@ -95,6 +95,7 @@
 //
 // MicroSD card
 //
+<<<<<<< HEAD
 #define MOSI_PIN                              23
 #define MISO_PIN                              19
 #define SCK_PIN                               18
@@ -108,3 +109,11 @@
 // MRR ESPA does not have enough spare pins for such reassignment.
 //#define HARDWARE_SERIAL1_RX                 21
 //#define HARDWARE_SERIAL1_TX                 22
+=======
+#define MOSI_PIN           23
+#define MISO_PIN           19
+#define SCK_PIN            18
+#define SDSS                5
+#define USES_SHARED_SPI  // SPI is shared by SD card with TMC SPI drivers
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222

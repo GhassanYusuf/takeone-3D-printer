@@ -39,9 +39,19 @@
 #define E1_DIAG_PIN                        P1_26  // Y+
 
 /**
+ * Trinamic Stallguard pins
+ */
+#define X_DIAG_PIN           P1_29   // X-
+#define Y_DIAG_PIN           P1_27   // Y-
+#define Z_DIAG_PIN           P1_25   // Z-
+#define E0_DIAG_PIN          P1_28   // X+
+#define E1_DIAG_PIN          P1_26   // Y+
+
+/**
  * Limit Switches
  */
 #if X_STALL_SENSITIVITY
+<<<<<<< HEAD
   #define X_STOP_PIN                  X_DIAG_PIN
   #if X_HOME_DIR < 0
     #define X_MAX_PIN                      P1_28  // X+
@@ -75,6 +85,41 @@
 #else
   #define Z_MIN_PIN                        P1_25  // Z-
   #define Z_MAX_PIN                        P1_24  // Z+
+=======
+  #define X_STOP_PIN         X_DIAG_PIN
+  #if X_HOME_DIR < 0
+    #define X_MAX_PIN        P1_28   // X+
+  #else
+    #define X_MIN_PIN        P1_28   // X+
+  #endif
+#else
+  #define X_MIN_PIN          P1_29   // X-
+  #define X_MAX_PIN          P1_28   // X+
+#endif
+
+#if Y_STALL_SENSITIVITY
+  #define Y_STOP_PIN         Y_DIAG_PIN
+  #if Y_HOME_DIR < 0
+    #define Y_MAX_PIN        P1_26   // Y+
+  #else
+    #define Y_MIN_PIN        P1_26   // Y+
+  #endif
+#else
+  #define Y_MIN_PIN          P1_27   // Y-
+  #define Y_MAX_PIN          P1_26   // Y+
+#endif
+
+#if Z_STALL_SENSITIVITY
+  #define Z_STOP_PIN         Z_DIAG_PIN
+  #if Z_HOME_DIR < 0
+    #define Z_MAX_PIN        P1_24   // Z+
+  #else
+    #define Z_MIN_PIN        P1_24   // Z+
+  #endif
+#else
+  #define Z_MIN_PIN          P1_25   // Z-
+  #define Z_MAX_PIN          P1_24   // Z+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif
 
 #define ONBOARD_ENDSTOPPULLUPS                    // Board has built-in pullups
@@ -184,9 +229,12 @@
   #define E0_SERIAL_TX_PIN                 P1_09
   #define E0_SERIAL_RX_PIN                 P1_08
 
+<<<<<<< HEAD
   #define E1_SERIAL_TX_PIN                 P1_04
   #define E1_SERIAL_RX_PIN                 P1_01
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE 19200
 #endif
@@ -312,25 +360,41 @@
 
       #if ENABLED(MKS_MINI_12864)
 
+<<<<<<< HEAD
         #define DOGLCD_CS           EXPA1_05_PIN
         #define DOGLCD_A0           EXPA1_04_PIN
         #define DOGLCD_SCK          EXPA2_09_PIN
         #define DOGLCD_MOSI         EXPA2_05_PIN
+=======
+        #define DOGLCD_CS    P1_21
+        #define DOGLCD_A0    P1_22
+        #define DOGLCD_SCK   P0_15
+        #define DOGLCD_MOSI  P0_18
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
       #elif ENABLED(ENDER2_STOCKDISPLAY)
 
         /**
          * Creality Ender-2 display pinout
          *                   _____
+<<<<<<< HEAD
          *               5V | 1 2 | GND
          *     (MOSI) P1_23 | 3 4 | P1_22 (LCD_CS)
          *   (LCD_A0) P1_21 | 5 6   P1_20 (BTN_EN2)
          *      RESET P1_19 | 7 8 | P1_18 (BTN_EN1)
          *  (BTN_ENC) P0_28 | 9 10| P1_30 (SCK)
+=======
+         *               5V | · · | GND
+         *     (MOSI) P1_23 | · · | P1_22 (LCD_CS)
+         *   (LCD_A0) P1_21 | · · | P1_20 (BTN_EN2)
+         *      RESET P1.19 | · · | P1_18 (BTN_EN1)
+         *  (BTN_ENC) P0_28 | · · | P1_30 (SCK)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
          *                   -----
          *                    EXP1
          */
 
+<<<<<<< HEAD
         #define BTN_EN1             EXPA1_08_PIN
         #define BTN_EN2             EXPA1_06_PIN
         #define BTN_ENC             EXPA1_09_PIN
@@ -340,6 +404,17 @@
         #define DOGLCD_MOSI         EXPA1_03_PIN
         #define FORCE_SOFT_SPI
         #define LCD_BACKLIGHT_PIN          -1
+=======
+        #define BTN_EN1      P1_18
+        #define BTN_EN2      P1_20
+        #define BTN_ENC      P0_28
+        #define DOGLCD_CS    P1_22
+        #define DOGLCD_A0    P1_21
+        #define DOGLCD_SCK   P1_30
+        #define DOGLCD_MOSI  P1_23
+        #define FORCE_SOFT_SPI
+        #define LCD_BACKLIGHT_PIN -1
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       #endif
 
       #if ENABLED(ULTIPANEL)

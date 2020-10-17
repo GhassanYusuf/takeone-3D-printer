@@ -84,6 +84,7 @@
 #define DEBUG_OUT ENABLED(DEBUG_LEVELING_FEATURE)
 #include "../core/debug_out.h"
 
+<<<<<<< HEAD
 Probe probe;
 
 xyz_pos_t Probe::offset; // Initialized by settings.load()
@@ -92,6 +93,16 @@ xyz_pos_t Probe::offset; // Initialized by settings.load()
   const xyz_pos_t &Probe::offset_xy = Probe::offset;
 #endif
 
+=======
+
+xyz_pos_t probe_offset; // Initialized by settings.load()
+
+#if HAS_PROBE_XY_OFFSET
+  xyz_pos_t &probe_offset_xy = probe_offset;
+#endif
+
+
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #if ENABLED(Z_PROBE_SLED)
 
   #ifndef SLED_DOCKING_OFFSET
@@ -712,12 +723,18 @@ float Probe::probe_at_point(const float &rx, const float &ry, const ProbePtRaise
 
   // TODO: Adapt for SCARA, where the offset rotates
   xyz_pos_t npos = { rx, ry };
+<<<<<<< HEAD
   if (probe_relative) {                                     // The given position is in terms of the probe
     if (!can_reach(npos)) {
       if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("Position Not Reachable");
       return NAN;
     }
     npos -= offset_xy;                                      // Get the nozzle position
+=======
+  if (probe_relative) {
+    if (!position_is_reachable_by_probe(npos)) return NAN;  // The given position is in terms of the probe
+    npos -= probe_offset_xy;                                // Get the nozzle position
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   }
   else if (!position_is_reachable(npos)) return NAN;        // The given position is in terms of the nozzle
 

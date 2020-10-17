@@ -106,19 +106,34 @@
 #define FAN_PIN                              146  // 15
 #define HEATER_BED_PIN                       144  // 4
 
+<<<<<<< HEAD
 #define CONTROLLER_FAN_PIN                   147
 //#define E0_AUTO_FAN_PIN                    148  // need to update Configuration_adv.h @section extruder
 //#define E1_AUTO_FAN_PIN                    149  // need to update Configuration_adv.h @section extruder
 #define FAN1_PIN                             149
+=======
+#define CONTROLLER_FAN_PIN 147
+//#define E0_AUTO_FAN_PIN 148 // need to update Configuration_adv.h @section extruder
+//#define E1_AUTO_FAN_PIN 149 // need to update Configuration_adv.h @section extruder
+#define FAN1_PIN 149
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // MicroSD card
 //
+<<<<<<< HEAD
 #define MOSI_PIN                              23
 #define MISO_PIN                              19
 #define SCK_PIN                               18
 #define SDSS                                   5
 #define USES_SHARED_SPI                           // SPI is shared by SD card with TMC SPI drivers
+=======
+#define MOSI_PIN           23
+#define MISO_PIN           19
+#define SCK_PIN            18
+#define SDSS                5
+#define USES_SHARED_SPI  // SPI is shared by SD card with TMC SPI drivers
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //////////////////////////
 // LCDs and Controllers //
@@ -136,7 +151,11 @@
 
   #elif ENABLED(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER)
 
+<<<<<<< HEAD
     #define BEEPER_PIN                       151
+=======
+    #define BEEPER_PIN      151
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
     //#define LCD_PINS_D5                    150
     //#define LCD_PINS_D6                    152

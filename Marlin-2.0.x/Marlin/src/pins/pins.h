@@ -187,9 +187,13 @@
 #elif MB(TANGO)
   #include "ramps/pins_TANGO.h"                 // ATmega2560                             env:mega2560
 #elif MB(MKS_GEN_L_V2)
+<<<<<<< HEAD
   #include "ramps/pins_MKS_GEN_L_V2.h"          // ATmega2560                             env:mega2560
 #elif MB(COPYMASTER_3D)
   #include "ramps/pins_COPYMASTER_3D.h"         // ATmega2560                             env:mega2560
+=======
+  #include "ramps/pins_MKS_GEN_L_V2.h"          // ATmega2560                             env:megaatmega2560
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // RAMBo and derivatives
@@ -251,6 +255,7 @@
 #elif MB(OVERLORD)
   #include "mega/pins_OVERLORD.h"               // ATmega2560                             env:mega2560
 #elif MB(HJC2560C_REV2)
+<<<<<<< HEAD
   #include "mega/pins_HJC2560C_REV2.h"          // ATmega2560                             env:mega2560
 #elif MB(LEAPFROG_XEED2015)
   #include "mega/pins_LEAPFROG_XEED2015.h"      // ATmega2560                             env:mega2560
@@ -260,6 +265,11 @@
   #include "mega/pins_PICAOLD.h"                // ATmega2560                             env:mega2560
 #elif MB(INTAMSYS40)
   #include "mega/pins_INTAMSYS40.h"             // ATmega2560                             env:mega2560
+=======
+  #include "mega/pins_HJC2560C_REV2.h"          // ATmega2560                             env:megaatmega2560
+#elif MB(LEAPFROG_XEED2015)
+  #include "mega/pins_LEAPFROG_XEED2015.h"      // ATmega2560                             env:megaatmega2560
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // ATmega1281, ATmega2561
@@ -398,7 +408,11 @@
   #include "lpc1769/pins_SMOOTHIEBOARD.h"       // LPC1769                                env:LPC1769
 #elif MB(TH3D_EZBOARD)
   #include "lpc1769/pins_TH3D_EZBOARD.h"        // LPC1769                                env:LPC1769
+<<<<<<< HEAD
 #elif MB(BTT_SKR_V1_4_TURBO)
+=======
+#elif MB(BIGTREE_SKR_V1_4_TURBO)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #include "lpc1769/pins_BTT_SKR_V1_4_TURBO.h"  // LPC1769                                env:LPC1769
 
 //
@@ -541,6 +555,7 @@
 #elif MB(RUMBA32_MKS)
   #include "stm32f4/pins_RUMBA32_MKS.h"         // STM32F4                                env:rumba32_mks
 #elif MB(BLACK_STM32F407VE)
+<<<<<<< HEAD
   #include "stm32f4/pins_BLACK_STM32F407VE.h"   // STM32F4                                env:STM32F407VE_black
 #elif MB(STEVAL_3DP001V1)
   #include "stm32f4/pins_STEVAL_3DP001V1.h"     // STM32F4                                env:STM32F401VE_STEVAL
@@ -550,6 +565,17 @@
   #include "stm32f4/pins_BTT_GTR_V1_0.h"        // STM32F4                                env:BIGTREE_GTR_V1_0
 #elif MB(BTT_BTT002_V1_0)
   #include "stm32f4/pins_BTT_BTT002_V1_0.h"     // STM32F4                                env:BIGTREE_BTT002
+=======
+  #include "stm32/pins_BLACK_STM32F407VE.h"     // STM32F4                                env:STM32F407VE_black
+#elif MB(STEVAL_3DP001V1)
+  #include "stm32/pins_STEVAL_3DP001V1.h"       // STM32F4                                env:STM32F401VE_STEVAL
+#elif MB(BIGTREE_SKR_PRO_V1_1)
+  #include "stm32/pins_BTT_SKR_PRO_V1_1.h"      // STM32F4                                env:BIGTREE_SKR_PRO
+#elif MB(BIGTREE_GTR_V1_0)
+  #include "stm32/pins_BTT_GTR_V1_0.h"          // STM32F4                                env:BIGTREE_GTR
+#elif MB(BIGTREE_BTT002_V1_0)
+  #include "stm32/pins_BTT_BTT002_V1_0.h"       // STM32F4                                env:BIGTREE_BTT002
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #elif MB(LERDGE_K)
   #include "stm32f4/pins_LERDGE_K.h"            // STM32F4                                env:STM32F4
 #elif MB(LERDGE_X)
@@ -585,6 +611,7 @@
   #include "esp32/pins_MRR_ESPE.h"              // ESP32                                  env:esp32
 #elif MB(E4D_BOX)
   #include "esp32/pins_E4D.h"                   // ESP32                                  env:esp32
+<<<<<<< HEAD
 
 //
 // Adafruit Grand Central M4 (SAMD51 ARM Cortex-M4)
@@ -592,6 +619,8 @@
 
 #elif MB(AGCM4_RAMPS_144)
   #include "samd/pins_RAMPS_144.h"              // SAMD51                                 env:SAMD51_grandcentral_m4
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 //
 // Linux Native Debug board
@@ -606,6 +635,7 @@
   // Obsolete or unknown board
   //
 
+<<<<<<< HEAD
   #define BOARD_MKS_13                  -1000
   #define BOARD_TRIGORILLA              -1001
   #define BOARD_RURAMPS4D               -1002
@@ -625,6 +655,18 @@
   #define BOARD_BIGTREE_SKR_MINI_E3     -1016
   #define BOARD_BIGTREE_SKR_E3_DIP      -1017
   #define BOARD_RUMBA32                 -1018
+=======
+  #define BOARD_MKS_13        -1000
+  #define BOARD_TRIGORILLA    -1001
+  #define BOARD_RURAMPS4D     -1002
+  #define BOARD_FORMBOT_TREX2 -1003
+  #define BOARD_BIQU_SKR_V1_1 -1004
+  #define BOARD_STM32F1R      -1005
+  #define BOARD_STM32F103R    -1006
+  #define BOARD_ESP32         -1007
+  #define BOARD_BIGTREE_SKR_MINI_E3 -1008
+  #define BOARD_STEVAL        -1009
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
   #if MB(MKS_13)
     #error "BOARD_MKS_13 has been renamed BOARD_MKS_GEN_13. Please update your configuration."
@@ -635,6 +677,7 @@
   #elif MB(FORMBOT_TREX2)
     #error "FORMBOT_TREX2 has been renamed BOARD_FORMBOT_TREX2PLUS. Please update your configuration."
   #elif MB(BIQU_SKR_V1_1)
+<<<<<<< HEAD
     #error "BOARD_BIQU_SKR_V1_1 has been renamed BOARD_BTT_SKR_V1_1. Please update your configuration."
   #elif MB(BIGTREE_SKR_V1_1)
     #error "BOARD_BIGTREE_SKR_V1_1 has been renamed BOARD_BTT_SKR_V1_1. Please update your configuration."
@@ -656,16 +699,26 @@
     #error "BOARD_BIGTREE_SKR_MINI_E3 has been renamed BOARD_BTT_SKR_MINI_E3_V1_0. Please update your configuration."
   #elif MB(BIGTREE_SKR_E3_DIP)
     #error "BOARD_BIGTREE_SKR_E3_DIP has been renamed BOARD_BTT_SKR_E3_DIP. Please update your configuration."
+=======
+    #error "BOARD_BIQU_SKR_V1_1 has been renamed BOARD_BIGTREE_SKR_V1_1. Please update your configuration."
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #elif MB(STM32F1R)
     #error "BOARD_STM32F1R has been renamed BOARD_STM32F103RE. Please update your configuration."
   #elif MB(STM32F103R)
     #error "BOARD_STM32F103R has been renamed BOARD_STM32F103RE. Please update your configuration."
   #elif MOTHERBOARD == BOARD_ESP32
     #error "BOARD_ESP32 has been renamed BOARD_ESPRESSIF_ESP32. Please update your configuration."
+<<<<<<< HEAD
   #elif MB(STEVAL)
     #error "BOARD_STEVAL has been renamed BOARD_STEVAL_3DP001V1. Please update your configuration."
   #elif MB(RUMBA32)
     #error "BOARD_RUMBA32 is now BOARD_RUMBA32_MKS or BOARD_RUMBA32_AUS3D. Please update your configuration."
+=======
+  #elif MB(BIGTREE_SKR_MINI_E3)
+    #error "BOARD_BIGTREE_SKR_MINI_E3 has been renamed BOARD_BTT_SKR_MINI_E3_V1_0. Please update your configuration."
+  #elif MB(STEVAL)
+    #error "BOARD_STEVAL has been renamed BOARD_STEVAL_3DP001V1. Please update your configuration."
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #else
     #error "Unknown MOTHERBOARD value set in Configuration.h"
   #endif
@@ -678,6 +731,7 @@
   #undef BOARD_STM32F1R
   #undef BOARD_STM32F103R
   #undef BOARD_ESP32
+<<<<<<< HEAD
   #undef BOARD_STEVAL
   #undef BOARD_BIGTREE_SKR_MINI_E3
   #undef BOARD_BIGTREE_SKR_V1_1
@@ -689,6 +743,10 @@
   #undef BOARD_BIGTREE_SKR_MINI_V1_1
   #undef BOARD_BIGTREE_SKR_E3_DIP
   #undef BOARD_RUMBA32
+=======
+  #undef BOARD_BIGTREE_SKR_MINI_E3
+  #undef BOARD_STEVAL
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 #endif
 
@@ -865,6 +923,7 @@
 #ifndef E7_ENABLE_PIN
   #define E7_ENABLE_PIN -1
 #endif
+<<<<<<< HEAD
 
 //
 // Destroy unused CS pins
@@ -902,6 +961,8 @@
 #if E_STEPPERS > 7 && !AXIS_HAS_SPI(E7)
   #undef E7_CS_PIN
 #endif
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
 #ifndef X_CS_PIN
   #define X_CS_PIN -1
@@ -1276,9 +1337,38 @@
     #endif
     #ifndef X2_SERIAL_RX_PIN
       #define X2_SERIAL_RX_PIN _EPIN(X2_E_INDEX, SERIAL_RX)
+<<<<<<< HEAD
     #endif
   #endif
 
+  //
+  // Auto-assign pins for stallGuard sensorless homing
+  //
+  #if X2_STALL_SENSITIVITY && ENABLED(X_DUAL_ENDSTOPS) && _PEXI(X2_E_INDEX, DIAG)
+    #define X2_DIAG_PIN _EPIN(X2_E_INDEX, DIAG)
+    #if   DIAG_REMAPPED(X2, X_MIN)      // If already remapped in the pins file...
+      #define X2_USE_ENDSTOP _XMIN_
+    #elif DIAG_REMAPPED(X2, Y_MIN)
+      #define X2_USE_ENDSTOP _YMIN_
+    #elif DIAG_REMAPPED(X2, Z_MIN)
+      #define X2_USE_ENDSTOP _ZMIN_
+    #elif DIAG_REMAPPED(X2, X_MAX)
+      #define X2_USE_ENDSTOP _XMAX_
+    #elif DIAG_REMAPPED(X2, Y_MAX)
+      #define X2_USE_ENDSTOP _YMAX_
+    #elif DIAG_REMAPPED(X2, Z_MAX)
+      #define X2_USE_ENDSTOP _ZMAX_
+    #else                               // Otherwise use the driver DIAG_PIN directly
+      #define _X2_USE_ENDSTOP(P) _E##P##_DIAG_
+      #define X2_USE_ENDSTOP _X2_USE_ENDSTOP(X2_E_INDEX)
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
+    #endif
+    #undef X2_DIAG_PIN
+  #endif
+
+<<<<<<< HEAD
+=======
   //
   // Auto-assign pins for stallGuard sensorless homing
   //
@@ -1303,6 +1393,7 @@
     #undef X2_DIAG_PIN
   #endif
 
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
   #define Y2_E_INDEX INCREMENT(X2_E_INDEX)
 #else
   #define Y2_E_INDEX X2_E_INDEX

@@ -21,6 +21,7 @@
  */
 #pragma once
 
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/lcd/extui/lib/dgus/origin/DGUSDisplayDef.h
 enum DGUSLCD_Screens : uint8_t {
   DGUSLCD_SCREEN_BOOT = 0,
   DGUSLCD_SCREEN_MAIN = 10,
@@ -278,3 +279,32 @@ constexpr uint16_t SP_T_E0_Set = 0x5010;
 constexpr uint16_t SP_T_E1_Is = 0x5020;
 constexpr uint16_t SP_T_Bed_Is = 0x5030;
 constexpr uint16_t SP_T_Bed_Set = 0x5040;
+=======
+/* DGUS implementation written by coldtobi in 2019 for Marlin */
+
+#include "DGUSVPVariable.h"
+
+// This file defines the interaction between Marlin and the display firmware.
+
+// information on which screen which VP is displayed
+// As this is a sparse table, two arrays are needed:
+// one to list the VPs of one screen and one to map screens to the lists.
+// (Strictly this would not be necessary, but allows to only send data the display needs and reducing load on Marlin)
+struct VPMapping {
+  const uint8_t screen;
+  const uint16_t *VPList;  // The list is null-terminated.
+};
+
+extern const struct VPMapping VPMap[];
+
+// List of VPs handled by Marlin / The Display.
+extern const struct DGUS_VP_Variable ListOfVP[];
+
+#if ENABLED(DGUS_LCD_UI_ORIGIN)
+  #include "DGUSDisplayDefinitionOrigin.h"
+#elif ENABLED(DGUS_LCD_UI_FYSETC)
+  #include "DGUSDisplayDefinitionFYSETC.h"
+#elif ENABLED(DGUS_LCD_UI_HIPRECY)
+  #include "DGUSDisplayDefinitionHIPRECY.h"
+#endif
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/lcd/extensible_ui/lib/dgus/DGUSDisplayDefinition.h

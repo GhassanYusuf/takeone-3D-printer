@@ -56,6 +56,7 @@
   #undef SHOW_TEMP_ADC_VALUES
 #endif
 
+<<<<<<< HEAD
 #if EITHER(DUAL_X_CARRIAGE, MULTI_NOZZLE_DUPLICATION)
   #define HAS_DUPLICATION_MODE 1
 #endif
@@ -104,11 +105,14 @@
   #define HAS_LEDS_OFF_FLAG 1
 #endif
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 // Multiple Z steppers
 #ifndef NUM_Z_STEPPER_DRIVERS
   #define NUM_Z_STEPPER_DRIVERS 1
 #endif
 
+<<<<<<< HEAD
 #if ENABLED(Z_STEPPER_ALIGN_KNOWN_STEPPER_POSITIONS)
   #undef Z_STEPPER_ALIGN_AMP
 #endif
@@ -116,6 +120,8 @@
   #define Z_STEPPER_ALIGN_AMP 1.0
 #endif
 
+=======
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #define HAS_CUTTER EITHER(SPINDLE_FEATURE, LASER_FEATURE)
 
 #if !defined(__AVR__) || !defined(USBCON)
@@ -225,6 +231,7 @@
   #define POLL_JOG
 #endif
 
+<<<<<<< HEAD
 /**
  * Driver Timings
  * NOTE: Driver timing order is longest-to-shortest duration.
@@ -289,4 +296,9 @@
   #else
     #define MAXIMUM_STEPPER_RATE 250000
   #endif
+=======
+// G60/G61 Position Save
+#if SAVED_POSITIONS > 256
+  #error "SAVED_POSITIONS must be an integer from 0 to 256."
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 #endif

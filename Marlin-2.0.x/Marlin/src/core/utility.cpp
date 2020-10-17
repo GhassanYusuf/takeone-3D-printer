@@ -78,6 +78,7 @@ void safe_delay(millis_t ms) {
     #if HAS_BED_PROBE
 
       #if !HAS_PROBE_XY_OFFSET
+<<<<<<< HEAD
         SERIAL_ECHOPAIR("Probe Offset X0 Y0 Z", probe.offset.z, " (");
       #else
         SERIAL_ECHOPAIR_P(PSTR("Probe Offset X"), probe.offset_xy.x, SP_Y_STR, probe.offset_xy.y, SP_Z_STR, probe.offset.z);
@@ -86,10 +87,21 @@ void safe_delay(millis_t ms) {
         else if (probe.offset_xy.x < 0)
           SERIAL_ECHOPGM(" (Left");
         else if (probe.offset_xy.y != 0)
+=======
+        SERIAL_ECHOPAIR("Probe Offset X0 Y0 Z", probe_offset.z, " (");
+      #else
+        SERIAL_ECHOPAIR_P(PSTR("Probe Offset X"), probe_offset.x, SP_Y_STR, probe_offset.y, SP_Z_STR, probe_offset.z);
+        if (probe_offset.x > 0)
+          SERIAL_ECHOPGM(" (Right");
+        else if (probe_offset.x < 0)
+          SERIAL_ECHOPGM(" (Left");
+        else if (probe_offset.y != 0)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
           SERIAL_ECHOPGM(" (Middle");
         else
           SERIAL_ECHOPGM(" (Aligned With");
 
+<<<<<<< HEAD
         if (probe.offset_xy.y > 0)
           serialprintPGM(ENABLED(IS_SCARA) ? PSTR("-Distal") : PSTR("-Back"));
         else if (probe.offset_xy.y < 0)
@@ -102,6 +114,35 @@ void safe_delay(millis_t ms) {
       #endif
 
       serialprintPGM(probe.offset.z < 0 ? PSTR("Below") : probe.offset.z > 0 ? PSTR("Above") : PSTR("Same Z as"));
+=======
+        if (probe_offset.y > 0) {
+          #if IS_SCARA
+            SERIAL_ECHOPGM("-Distal");
+          #else
+            SERIAL_ECHOPGM("-Back");
+          #endif
+        }
+        else if (probe_offset.y < 0) {
+          #if IS_SCARA
+            SERIAL_ECHOPGM("-Proximal");
+          #else
+            SERIAL_ECHOPGM("-Front");
+          #endif
+        }
+        else if (probe_offset.x != 0)
+          SERIAL_ECHOPGM("-Center");
+
+        SERIAL_ECHOPGM(" & ");
+
+      #endif
+
+      if (probe_offset.z < 0)
+        SERIAL_ECHOPGM("Below");
+      else if (probe_offset.z > 0)
+        SERIAL_ECHOPGM("Above");
+      else
+        SERIAL_ECHOPGM("Same Z as");
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
       SERIAL_ECHOLNPGM(" Nozzle)");
 
     #endif
@@ -124,7 +165,11 @@ void safe_delay(millis_t ms) {
           SERIAL_ECHOPGM("ABL Adjustment X");
           LOOP_XYZ(a) {
             float v = planner.get_axis_position_mm(AxisEnum(a)) - current_position[a];
+<<<<<<< HEAD
             SERIAL_CHAR(' ', XYZ_CHAR(a));
+=======
+            SERIAL_CHAR(' ', 'X' + char(a));
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
             if (v > 0) SERIAL_CHAR('+');
             SERIAL_ECHO(v);
           }

@@ -58,7 +58,11 @@ void update_case_light() {
   if (case_light_arg_flag && case_light_on)
     case_light_brightness = case_light_brightness_sav;  // restore last brightens if this is an S1 argument
 
+<<<<<<< HEAD
   #if ENABLED(CASE_LIGHT_USE_NEOPIXEL) || DISABLED(CASE_LIGHT_NO_BRIGHTNESS)
+=======
+  #if ENABLED(CASE_LIGHT_USE_NEOPIXEL) || NONE(CASE_LIGHT_USE_NEOPIXEL, CASE_LIGHT_NO_BRIGHTNESS)
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
     const uint8_t i = case_light_on ? case_light_brightness : 0, n10ct = INVERT_CASE_LIGHT ? 255 - i : i;
   #endif
 

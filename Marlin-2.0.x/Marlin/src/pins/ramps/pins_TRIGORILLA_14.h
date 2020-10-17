@@ -46,6 +46,12 @@
   #define Y_MIN_PIN                           19
 #endif
 
+//
+// Limit Switches
+//
+#define X_MAX_PIN          43
+#define Y_MIN_PIN          19
+
 // Labeled pins
 #define TG_HEATER_BED_PIN                      8
 #define TG_HEATER_0_PIN                       10

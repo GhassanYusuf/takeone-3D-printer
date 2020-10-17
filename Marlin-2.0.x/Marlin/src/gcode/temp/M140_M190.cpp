@@ -21,7 +21,11 @@
  */
 
 /**
+<<<<<<< HEAD:Marlin-2.0.x/Marlin/src/gcode/temp/M140_M190.cpp
  * gcode/temp/M140_M190.cpp
+=======
+ * gcode/temperature/M140_M190.cpp
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222:Marlin-2.0.x/Marlin/src/gcode/temperature/M140_M190.cpp
  *
  * Bed target temperature control
  */

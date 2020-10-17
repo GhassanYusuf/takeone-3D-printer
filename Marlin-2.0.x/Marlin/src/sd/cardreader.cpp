@@ -1082,7 +1082,22 @@ void CardReader::fileHasFinished() {
     startFileprint();
   }
   else {
+<<<<<<< HEAD
     endFilePrint();
+=======
+    stopSDPrint();
+
+    #if ENABLED(POWER_LOSS_RECOVERY)
+      recovery.purge();
+    #endif
+
+    #if ENABLED(SD_FINISHED_STEPPERRELEASE) && defined(SD_FINISHED_RELEASECOMMAND)
+      planner.finish_and_disable();
+    #endif
+
+    print_job_timer.stop();
+    queue.enqueue_now_P(print_job_timer.duration() > 60 ? PSTR("M31") : PSTR("M117"));
+>>>>>>> 2b7ac9ca62c71088824dd1eb57906e58d42de222
 
     #if ENABLED(SDCARD_SORT_ALPHA)
       presort();
